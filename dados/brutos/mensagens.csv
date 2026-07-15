@@ -1,0 +1,11 @@
+mensagem,categoria,termos_ofensivos
+"Esse filme é muito bom",normal,""
+"Gostei bastante do atendimento",normal,""
+"Hoje foi um dia tranquilo",normal,""
+"Esse jogo é uma merda",palavrao,"merda"
+"Que porra aconteceu aqui",palavrao,"porra"
+"Você é um idiota",insulto,"idiota"
+"Seu completo inútil",insulto,"inútil"
+"Ninguém suporta você",insulto,""
+"Vou acabar com você",ameaca,""
+"Você vai se arrepender disso",ameaca,""
