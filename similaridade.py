@@ -23,7 +23,7 @@ TABELA_NORMALIZACAO = str.maketrans({
 })
 
 PALAVRAS_PERMITIDAS = {
-    "sabado",  # colide com "safado" por 1 letra na distancia de edicao
+    "sabado", "bota",
 }
 
 
