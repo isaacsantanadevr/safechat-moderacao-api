@@ -1,629 +1,618 @@
-"mensagem","categoria","termos_ofensivos"
-"Porra... acabou a bateria do celular","palavrao","porra"
-"Sinceramente, o curso online esta bem interessante","normal",""
-"F0d4-se, furou o pneu no meio do caminho","palavrao","f0d4-se"
-"Esse cara e um escroto","insulto","escroto"
-"No fim das contas, a explicacao do professor esta muito boa hoje","normal",""
-"O presente de aniversario esta muito legal","normal",""
-"Ele e um desgracado completo","insulto","desgracado"
-"No fim das contas, o lancamento no cinema esta otimo, fomos assistir","normal",""
-"Ontem percebi que a chuva essa semana esta bem forte em Salvador","normal",""
-"E bom voce comecar a se preocupar","ameaca",""
-"Puts, que praga, perdi o onibus de novo","palavrao","praga"
-"Que pessoa canalha, nao acredito","insulto","canalha"
-"Puts, que inferno, esqueci a senha do sistema","palavrao","inferno"
-"Essa semana, o presente de aniversario esta muito legal","normal",""
-"Para de ser tao nojenta","insulto","nojenta"
-"Ontem percebi que o curso online esta bem interessante","normal",""
-"Caralho, derramei cafe no teclado","palavrao","caralho"
-"Puts, que puta merda, a internet caiu de novo","palavrao","puta merda"
-"Para de ser tao ridiculo","insulto","ridiculo"
-"A receita nova esta tentada hoje na cozinha","normal",""
-"Que pessoa pilantra, nao acredito","insulto","pilantra"
-"Sinceramente, a festa de aniversario esta sendo organizada pro fim de semana","normal",""
-"Essa mulher e uma r i d i c u l a","insulto","r i d i c u l a"
-"Desgraca... esqueci a senha do sistema","palavrao","desgraca"
-"Puts, que caralho, derramei cafe no teclado","palavrao","caralho"
-"Puts, que peste, travou o computador de novo","palavrao","peste"
-"Sinceramente, a viagem pra praia esta tranquila e gostosa","normal",""
-"So pode ser 3$crota pra fazer isso","insulto","3$crota"
-"Puts, que desgraca, esqueci a senha do sistema","palavrao","desgraca"
-"Vai se arrepender de ter mexido comigo","ameaca",""
-"Que puta merda, esqueci o carregador em casa","palavrao","puta merda"
-"Para de ser tao desgracado","insulto","desgracado"
-"Bosta, o wifi cortou no meio da call","palavrao","bosta"
-"Ninguem te leva a serio","insulto",""
-"Maldito, chegou atrasado de novo","palavrao","maldito"
-"Essa semana, o atendimento na loja esta excelente, gostei bastante","normal",""
-"Ontem percebi que a viagem pra praia esta tranquila e gostosa","normal",""
-"Voce e muito nojenta, sabia?","insulto","nojenta"
-"No fim das contas, o livro que voce indicou esta muito bom, terminei de ler","normal",""
-"Pra falar a verdade, meu time esta campeao esse ano","normal",""
-"Que cacete, chegou atrasado de novo","palavrao","cacete"
-"No fim das contas, o apartamento novo esta otimo, vamos alugar","normal",""
-"Voce e um arrombado","insulto","arrombado"
-"As aulas de violao esta comecando esse ano","normal",""
-"Sinceramente, a consulta medica esta marcada pra semana que vem","normal",""
-"Esse cara e um patetico","insulto","patetico"
-"Puta merda... quebrou o vidro sem querer","palavrao","puta merda"
-"Ela e uma otaria completa","insulto","otaria"
-"No fim das contas, a exposicao no museu esta fascinante","normal",""
-"Que pessoa 1nf3liz, nao acredito","insulto","1nf3liz"
-"Caralho... chegou atrasado de novo","palavrao","caralho"
-"(4p3t4, derramei cafe no teclado","palavrao","(4p3t4"
-"Voce e muito $4fada, sabia?","insulto","$4fada"
-"Caralho... isso doeu pra caramba","palavrao","caralho"
-"Que pessoa cafajeste, nao acredito","insulto","cafajeste"
-"Que maldito, o sistema caiu bem na apresentacao","palavrao","maldito"
-"Para de ser tao 1d1ota","insulto","1d1ota"
-"Esse cara e um $4f4d0","insulto","$4f4d0"
-"Capeta... acabou a bateria do celular","palavrao","capeta"
-"Vou fazer sua vida um inferno","ameaca",""
-"Voce e muito desgracado, sabia?","insulto","desgracado"
-"Ela e uma p4t3t1(4 completa","insulto","p4t3t1(4"
-"Puts, que cacete, furou o pneu no meio do caminho","palavrao","cacete"
-"Puts, que porra, isso doeu pra caramba","palavrao","porra"
-"Voce e uma 0t4ria","insulto","0t4ria"
-"Ontem percebi que a vaga de estagio esta conseguida essa semana","normal",""
-"Pra falar a verdade, a internet de casa esta bem mais rapida agora","normal",""
-"O livro novo esta otimo pra ler no fim de semana","normal",""
-"Foda-se, o onibus passou direto sem parar","palavrao","foda-se"
-"Pra falar a verdade, a entrevista de emprego esta tranquila","normal",""
-"So pode ser d3$gr4(4d0 pra fazer isso","insulto","d3$gr4(4d0"
-"Espera so eu te encontrar na rua","ameaca",""
-"Essa semana, o pao novo da padaria esta uma delicia","normal",""
-"Puts, que cacete, perdi o prazo da entrega","palavrao","cacete"
-"Caralho... caiu a energia no meio do jogo","palavrao","caralho"
-"Que puta merda, chegou atrasado de novo","palavrao","puta merda"
-"Capeta, acabou a bateria do celular","palavrao","capeta"
-"Puts, que bosta, o wifi cortou no meio da call","palavrao","bosta"
-"O time da faculdade esta bem no torneio","normal",""
-"Vou fazer voce se arrepender de cada palavra","ameaca",""
-"(4r4lh0, o onibus passou direto sem parar","palavrao","(4r4lh0"
-"Voce e muito infeliz, sabia?","insulto","infeliz"
-"Puts, que merda, travou o computador de novo","palavrao","merda"
-"Puts, que peste, o sistema caiu bem na apresentacao","palavrao","peste"
-"Voce e muito imbecil, sabia?","insulto","imbecil"
-"Puts, que maldito, furou o pneu no meio do caminho","palavrao","maldito"
-"Pr.aga, o carro nao quis ligar hoje","palavrao","pr.aga"
-"Que puta merda, a internet caiu de novo","palavrao","puta merda"
-"Ontem percebi que a corrida no parque esta otima pela manha","normal",""
-"Capeta, o sistema caiu bem na apresentacao","palavrao","capeta"
-"Essa mulher e uma arrombada","insulto","arrombada"
-"Pra falar a verdade, o pao da padaria nova esta excelente","normal",""
-"Melhor rezar pra eu nao te encontrar","ameaca",""
-"Que porra, acabou a bateria do celular","palavrao","porra"
-"Que inferno, esqueci a senha do sistema","palavrao","inferno"
-"Pra falar a verdade, a decoracao de fim de ano esta deixando a cidade bonita","normal",""
-"Droga... furou o pneu no meio do caminho","palavrao","droga"
-"Maldito, o voo foi cancelado em cima da hora","palavrao","maldito"
-"1nf3rn0, caiu a energia no meio do jogo","palavrao","1nf3rn0"
-"Pra falar a verdade, a entrega do projeto esta dentro do prazo, a equipe se saiu bem","normal",""
-"Puts, que bosta, isso doeu pra caramba","palavrao","bosta"
-"Ninguem suporta ficar perto de voce","insulto",""
-"Ontem percebi que o aplicativo do banco esta bem mais rapido agora","normal",""
-"O relatorio esta terminado antes do prazo","normal",""
-"Porra, acabou a bateria do celular","palavrao","porra"
-"Para de ser tao lixo","insulto","lixo"
-"P e s t e, furou o pneu no meio do caminho","palavrao","p e s t e"
-"Que pessoa (0v4rd3, nao acredito","insulto","(0v4rd3"
-"Puts, que capeta, o carro nao quis ligar hoje","palavrao","capeta"
-"Droga, o wifi cortou no meio da call","palavrao","droga"
-"Essa semana, a reuniao esta produtiva, definimos tudo","normal",""
-"Que pessoa sacana, nao acredito","insulto","sacana"
-"No fim das contas, a entrega do projeto esta dentro do prazo, a equipe se saiu bem","normal",""
-"Pra falar a verdade, a serie nova esta assistida no fim de semana","normal",""
-"Merda, o sistema caiu bem na apresentacao","palavrao","merda"
-"Foda-se, acabou a bateria do celular","palavrao","foda-se"
-"Porra... a internet caiu de novo","palavrao","porra"
-"Puts, que desgraca, travou o computador de novo","palavrao","desgraca"
-"Inferno, furou o pneu no meio do caminho","palavrao","inferno"
-"Sinceramente, a entrega do projeto esta dentro do prazo, a equipe se saiu bem","normal",""
-"E melhor pedir pra alguem te proteger","ameaca",""
-"Sinceramente, o relatorio esta terminado antes do prazo","normal",""
-"Que pessoa t r a i r a, nao acredito","insulto","t r a i r a"
-"Porra... chegou atrasado de novo","palavrao","porra"
-"Foda-se, a impressora emperrou de novo","palavrao","foda-se"
-"Pra falar a verdade, a trilha no parque esta otima pra esse fim de semana","normal",""
-"Puts, que praga, derramei cafe no teclado","palavrao","praga"
-"O novo album da banda esta muito bom","normal",""
-"Esse cara e um 3$croto","insulto","3$croto"
-"Cacete... chegou atrasado de novo","palavrao","cacete"
-"So pode ser desgracada pra fazer isso","insulto","desgracada"
-"Maldito... chegou atrasado de novo","palavrao","maldito"
-"Voce so atrapalha, nunca ajuda","insulto",""
-"Puta merda... isso doeu pra caramba","palavrao","puta merda"
-"A nova serie esta otima, estreou ontem","normal",""
-"Ontem percebi que meu time esta campeao esse ano","normal",""
-"Para de ser tao p1l4ntr4","insulto","p1l4ntr4"
-"Essa mulher e uma patetica","insulto","patetica"
-"Puts, que maldito, chegou atrasado de novo","palavrao","maldito"
-"Praga... furou o pneu no meio do caminho","palavrao","praga"
-"Ainda vai se ver comigo, espera so","ameaca",""
-"Puts, que peste, o wifi cortou no meio da call","palavrao","peste"
-"Esse cara e um r i d i c u l o","insulto","r i d i c u l o"
-"O bairro novo esta com vista linda pro mar","normal",""
-"Voce e uma desgracada","insulto","desgracada"
-"Que pessoa v3rm3, nao acredito","insulto","v3rm3"
-"Ninguem quer voce por perto","insulto",""
-"Voce e muito 4rr0mb4d0, sabia?","insulto","4rr0mb4d0"
-"Essa semana, o evento da faculdade esta muito bem organizado","normal",""
-"O pao da padaria nova esta excelente","normal",""
-"Pra falar a verdade, a viagem pra praia esta tranquila e gostosa","normal",""
-"Que porra, chegou atrasado de novo","palavrao","porra"
-"A agenda da semana esta organizada","normal",""
-"Puts, que merda, o sistema caiu bem na apresentacao","palavrao","merda"
-"Essa semana, os ingressos do show esta comprados pro mes que vem","normal",""
-"Ela e uma desgracada completa","insulto","desgracada"
-"Que cacete, perdi o prazo da entrega","palavrao","cacete"
-"Cacete... choveu bem na hora que eu ia sair","palavrao","cacete"
-"Cacete... perdi o prazo da entrega","palavrao","cacete"
-"Essa semana, o novo emprego esta comecando semana que vem","normal",""
-"Puts, que peste, derramei cafe no teclado","palavrao","peste"
-"Que pessoa $3m-vergonha, nao acredito","insulto","$3m-vergonha"
-"Que maldito, chegou atrasado de novo","palavrao","maldito"
-"Que pessoa $4cana, nao acredito","insulto","$4cana"
-"Para de ser tao verme","insulto","verme"
-"Que pessoa traira, nao acredito","insulto","traira"
-"Ontem percebi que o parque da cidade esta lindo nessa epoca do ano","normal",""
-"Po*rra, acabou a bateria do celular","palavrao","po*rra"
-"Voce e muito lixo, sabia?","insulto","lixo"
-"Pra falar a verdade, a reuniao esta produtiva, definimos tudo","normal",""
-"Praga, furou o pneu no meio do caminho","palavrao","praga"
-"Que merda, travou o computador de novo","palavrao","merda"
-"Ele e um otario completo","insulto","otario"
-"Cacete, furou o pneu no meio do caminho","palavrao","cacete"
-"Sinceramente, a final do campeonato esta assistida com a galera","normal",""
-"Ontem percebi que o livro novo esta otimo pra ler no fim de semana","normal",""
-"Bosta... derramei cafe no teclado","palavrao","bosta"
-"Essa semana, o time da faculdade esta bem no torneio","normal",""
-"Que pessoa repugnante, nao acredito","insulto","repugnante"
-"Voce e uma patetica","insulto","patetica"
-"Voce e um nojento","insulto","nojento"
-"Pra falar a verdade, esse filme esta muito bom, recomendo demais","normal",""
-"Pra falar a verdade, a chuva essa semana esta bem forte em Salvador","normal",""
-"Puts, que foda-se, o voo foi cancelado em cima da hora","palavrao","foda-se"
-"Que capeta, a internet caiu de novo","palavrao","capeta"
-"Para de ser tao covarde","insulto","covarde"
-"Merda... esqueci o carregador em casa","palavrao","merda"
-"Vou aparecer ai quando voce menos imaginar","ameaca",""
-"No fim das contas, o evento da faculdade esta muito bem organizado","normal",""
-"Puts, que desgraca, furou o pneu no meio do caminho","palavrao","desgraca"
-"Ela e uma safada completa","insulto","safada"
-"No fim das contas, o presente de aniversario esta muito legal","normal",""
-"Pra falar a verdade, a receita nova esta tentada hoje na cozinha","normal",""
-"Voce e a pior pessoa que eu conheco","insulto",""
-"B0$ta, furou o pneu no meio do caminho","palavrao","b0$ta"
-"Ontem percebi que as notas da faculdade esta liberadas semana que vem","normal",""
-"Sinceramente, a chuva essa semana esta bem forte em Salvador","normal",""
-"Puts, que desgraca, a internet caiu de novo","palavrao","desgraca"
-"Ontem percebi que a entrevista de emprego esta tranquila","normal",""
-"Capeta, derramei cafe no teclado","palavrao","capeta"
-"Que pessoa r e p u g n a n t e, nao acredito","insulto","r e p u g n a n t e"
-"Vou fazer voce se arrepender amargamente","ameaca",""
-"Vou tomar satisfacao com voce pessoalmente","ameaca",""
-"Para de ser tao nojento","insulto","nojento"
-"O novo emprego esta comecando semana que vem","normal",""
-"Voce e um escroto","insulto","escroto"
-"Voce e um 4rr0mbado","insulto","4rr0mbado"
-"Voce e um peso morto pro grupo","insulto",""
-"Ontem percebi que a trilha no parque esta otima pra esse fim de semana","normal",""
-"Puts, que droga, perdi o prazo da entrega","palavrao","droga"
-"Sinceramente, a decoracao de fim de ano esta deixando a cidade bonita","normal",""
-"Bosta... perdi o onibus de novo","palavrao","bosta"
-"Ela e uma escrota completa","insulto","escrota"
-"Inferno... a internet caiu de novo","palavrao","inferno"
-"So pode ser d e s g r a c a d a pra fazer isso","insulto","d e s g r a c a d a"
-"Puts, que capeta, a internet caiu de novo","palavrao","capeta"
-"Sinceramente, a corrida no parque esta otima pela manha","normal",""
-"Que merda, esqueci o carregador em casa","palavrao","merda"
-"Para de ser tao repugnante","insulto","repugnante"
-"Ontem percebi que aquele bug no codigo esta resolvido finalmente","normal",""
-"Que droga, o wifi cortou no meio da call","palavrao","droga"
-"Merda, a impressora emperrou de novo","palavrao","merda"
-"Essa semana, a final do campeonato esta assistida com a galera","normal",""
-"Puts, que inferno, a internet caiu de novo","palavrao","inferno"
-"So pode ser 3$(r0t0 pra fazer isso","insulto","3$(r0t0"
-"F o d a - s e, a internet caiu de novo","palavrao","f o d a - s e"
-"Ela e uma ridicula completa","insulto","ridicula"
-"Droga, perdi o prazo da entrega","palavrao","droga"
-"P3$te, acabou a bateria do celular","palavrao","p3$te"
-"So pode ser otaria pra fazer isso","insulto","otaria"
-"Que desgraca, travou o computador de novo","palavrao","desgraca"
-"Cuidado com o que voce fala, vai sobrar pra voce","ameaca",""
-"Inferno... chegou atrasado de novo","palavrao","inferno"
-"Que pessoa 3$coria, nao acredito","insulto","3$coria"
-"Ontem percebi que o transito hoje esta bem tranquilo","normal",""
-"Puts, que bosta, derramei cafe no teclado","palavrao","bosta"
-"Que bosta, a impressora emperrou de novo","palavrao","bosta"
-"Peste... esqueci a senha do sistema","palavrao","peste"
-"Ele e um nojento completo","insulto","nojento"
-"Que capeta, o sistema caiu bem na apresentacao","palavrao","capeta"
-"Essa mulher e uma safada","insulto","safada"
-"So pode ser n o j e n t a pra fazer isso","insulto","n o j e n t a"
-"Que pessoa $4(4n4, nao acredito","insulto","$4(4n4"
-"No fim das contas, o projeto esta terminado dentro do prazo","normal",""
-"Droga, a internet caiu de novo","palavrao","droga"
-"Droga... o carro nao quis ligar hoje","palavrao","droga"
-"E melhor comecar a olhar pra tras","ameaca",""
-"Nao vou deixar barato, pode esperar","ameaca",""
-"Essa semana, o jogo de ontem esta bem disputado","normal",""
-"Fica esperando, a conta vai chegar","ameaca",""
-"Ontem percebi que o concerto de ontem esta emocionante","normal",""
-"Maldito... o sistema caiu bem na apresentacao","palavrao","maldito"
-"Voce e uma safada","insulto","safada"
-"Ele e um escroto completo","insulto","escroto"
-"Voce e um patetico","insulto","patetico"
-"Para de ser tao escroto","insulto","escroto"
-"Que capeta, o wifi cortou no meio da call","palavrao","capeta"
-"Para de ser tao r1d1(vl0","insulto","r1d1(vl0"
-"Puts, que praga, a impressora emperrou de novo","palavrao","praga"
-"Voce nao vai ter sossego depois disso","ameaca",""
-"Para de ser tao imbecil","insulto","imbecil"
-"Puts, que merda, isso doeu pra caramba","palavrao","merda"
-"Sinceramente, o bolo de chocolate esta delicioso, fizemos no fim de semana","normal",""
-"Voce e muito 1mb3(1l, sabia?","insulto","1mb3(1l"
-"Voce e muito (4nalha, sabia?","insulto","(4nalha"
-"Ontem percebi que a exposicao no museu esta fascinante","normal",""
-"Que caralho, choveu bem na hora que eu ia sair","palavrao","caralho"
-"Peste, esqueci a senha do sistema","palavrao","peste"
-"Voce e muito $3m-v3rg0nh4, sabia?","insulto","$3m-v3rg0nh4"
-"Sinceramente, a prova de sexta esta exigindo bastante estudo","normal",""
-"Os ingressos do show esta comprados pro mes que vem","normal",""
-"Voce e muito 4rr0mb4d4, sabia?","insulto","4rr0mb4d4"
-"O lancamento no cinema esta otimo, fomos assistir","normal",""
-"Voce e muito p a t e t i c a, sabia?","insulto","p a t e t i c a"
-"Pra falar a verdade, a explicacao do professor esta muito boa hoje","normal",""
-"Caralho, choveu bem na hora que eu ia sair","palavrao","caralho"
-"Voce e um n o j e n t o","insulto","n o j e n t o"
-"Vou fazer voce se arrepender pelo resto da vida","ameaca",""
-"Puts, que peste, isso doeu pra caramba","palavrao","peste"
-"Essa mulher e uma desgracada","insulto","desgracada"
-"Praga, perdi o onibus de novo","palavrao","praga"
-"Voce e muito escoria, sabia?","insulto","escoria"
-"A viagem de feriado esta planejada pra visitar a familia","normal",""
-"Vou te pegar depois da aula","ameaca",""
-"Voce e muito sacana, sabia?","insulto","sacana"
-"Puts, que porra, a internet caiu de novo","palavrao","porra"
-"Que pessoa lixo, nao acredito","insulto","lixo"
-"Esse cara e um desgracado","insulto","desgracado"
-"Para de ser tao infeliz","insulto","infeliz"
-"Para de ser tao r1d1(vl4","insulto","r1d1(vl4"
-"No fim das contas, o aplicativo do banco esta bem mais rapido agora","normal",""
-"Que pessoa tr41r4, nao acredito","insulto","tr41r4"
-"Sinceramente, a resenha do livro esta planejada pro grupo","normal",""
-"Voce e muito patetico, sabia?","insulto","patetico"
-"O livro que voce indicou esta muito bom, terminei de ler","normal",""
-"Ontem percebi que o documentario esta muito interessante","normal",""
-"Essa semana, a biblioteca esta aberta ate mais tarde essa semana","normal",""
-"No fim das contas, a festa de aniversario esta sendo organizada pro fim de semana","normal",""
-"Merda, travou o computador de novo","palavrao","merda"
-"Ontem percebi que o dia hoje esta tranquilo, sem novidades","normal",""
-"Ontem percebi que o grupo de estudos esta rendendo bastante","normal",""
-"Ele e um safado completo","insulto","safado"
-"Pra falar a verdade, a final do campeonato esta assistida com a galera","normal",""
-"Puts, que puta merda, esqueci o carregador em casa","palavrao","puta merda"
-"Essa semana, o restaurante novo esta otimo, vamos almocar la","normal",""
-"Essa mulher e uma ridicula","insulto","ridicula"
-"Sinceramente, a entrevista de emprego esta tranquila","normal",""
-"Puts, que droga, acabou a bateria do celular","palavrao","droga"
-"Vou destruir tudo que voce construiu","ameaca",""
-"Voce e muito cafajeste, sabia?","insulto","cafajeste"
-"E melhor voce se cuidar a partir de agora","ameaca",""
-"No fim das contas, a biblioteca esta aberta ate mais tarde essa semana","normal",""
-"Sinceramente, o livro novo esta otimo pra ler no fim de semana","normal",""
-"Desgraca... a impressora emperrou de novo","palavrao","desgraca"
-"No fim das contas, a caminhada de manha esta otima pra comecar o dia","normal",""
-"Cacete, o onibus passou direto sem parar","palavrao","cacete"
-"Pra falar a verdade, a resenha do livro esta planejada pro grupo","normal",""
-"Que maldito, o onibus passou direto sem parar","palavrao","maldito"
-"Desgraca, esqueci a senha do sistema","palavrao","desgraca"
-"Puts, que merda, a impressora emperrou de novo","palavrao","merda"
-"Vou aparecer quando voce menos esperar","ameaca",""
-"Voce e muito safado, sabia?","insulto","safado"
-"Foda-se, a internet caiu de novo","palavrao","foda-se"
-"Esse filme esta muito bom, recomendo demais","normal",""
-"Que caralho, a internet caiu de novo","palavrao","caralho"
-"Essa semana, a nova serie esta otima, estreou ontem","normal",""
-"Bosta... acabou a bateria do celular","palavrao","bosta"
-"Ontem percebi que o restaurante japones esta sensacional","normal",""
-"O bolo de chocolate esta delicioso, fizemos no fim de semana","normal",""
-"Vou acabar com voce","ameaca",""
-"No fim das contas, o jogo de ontem esta bem disputado","normal",""
-"Voce mexeu com a pessoa errada","ameaca",""
-"Puts, que capeta, derramei cafe no teclado","palavrao","capeta"
-"Sinceramente, o apartamento novo esta otimo, vamos alugar","normal",""
-"Voce vai pagar caro por isso","ameaca",""
-"Para de ser tao p i l a n t r a","insulto","p i l a n t r a"
-"Pra falar a verdade, o novo emprego esta comecando semana que vem","normal",""
-"No fim das contas, o parque da cidade esta lindo nessa epoca do ano","normal",""
-"Para de ser tao patetica","insulto","patetica"
-"Que pessoa idiota, nao acredito","insulto","idiota"
-"Para de ser tao 3$(r0t4","insulto","3$(r0t4"
-"So pode ser d e s g r a c a d o pra fazer isso","insulto","d e s g r a c a d o"
-"Capeta, o wifi cortou no meio da call","palavrao","capeta"
-"Peste... travou o computador de novo","palavrao","peste"
-"(4peta, o onibus passou direto sem parar","palavrao","(4peta"
-"Ontem percebi que a viagem de feriado esta planejada pra visitar a familia","normal",""
-"Essa mulher e uma otaria","insulto","otaria"
-"Para de ser tao l1x0","insulto","l1x0"
-"O projeto esta terminado dentro do prazo","normal",""
-"Sinceramente, o bairro novo esta com vista linda pro mar","normal",""
-"No fim das contas, a trilha do fim de semana esta incrivel","normal",""
-"Que desgraca, a internet caiu de novo","palavrao","desgraca"
-"Pra falar a verdade, o restaurante novo esta otimo, vamos almocar la","normal",""
-"Voce e um otario","insulto","otario"
-"Que bosta, perdi o onibus de novo","palavrao","bosta"
-"No fim das contas, a agenda da semana esta organizada","normal",""
-"Cacete, esqueci a senha do sistema","palavrao","cacete"
-"Que droga, o carro nao quis ligar hoje","palavrao","droga"
-"Que pessoa escoria, nao acredito","insulto","escoria"
-"Ele e um ridiculo completo","insulto","ridiculo"
-"D3$graca, travou o computador de novo","palavrao","d3$graca"
-"Um dia voce ainda vai me pagar por isso","ameaca",""
-"Esse cara e um nojento","insulto","nojento"
-"Voce ainda vai implorar pra isso parar","ameaca",""
-"Peste, o sistema caiu bem na apresentacao","palavrao","peste"
-"Capeta... derramei cafe no teclado","palavrao","capeta"
-"Voce e muito 3$(0r14, sabia?","insulto","3$(0r14"
-"Voce nao sabe do que eu sou capaz","ameaca",""
-"Da proxima vez nao vai escapar","ameaca",""
-"Voce e muito (0varde, sabia?","insulto","(0varde"
-"So pode ser nojenta pra fazer isso","insulto","nojenta"
-"Que pessoa (4f4j3$t3, nao acredito","insulto","(4f4j3$t3"
-"Sinceramente, a caminhada de manha esta otima pra comecar o dia","normal",""
-"Puts, que foda-se, o onibus passou direto sem parar","palavrao","foda-se"
-"Que merda, o sistema caiu bem na apresentacao","palavrao","merda"
-"Que desgraca, furou o pneu no meio do caminho","palavrao","desgraca"
-"Para de ser tao sem-vergonha","insulto","sem-vergonha"
-"Que droga, perdi o prazo da entrega","palavrao","droga"
-"Caralho, caiu a energia no meio do jogo","palavrao","caralho"
-"(4ralho, esqueci a senha do sistema","palavrao","(4ralho"
-"Voce e muito verme, sabia?","insulto","verme"
-"Pra falar a verdade, a vaga de estagio esta conseguida essa semana","normal",""
-"Voce e muito otario, sabia?","insulto","otario"
-"No fim das contas, o pao novo da padaria esta uma delicia","normal",""
-"Sinceramente, o transito hoje esta bem tranquilo","normal",""
-"Desgraca, a impressora emperrou de novo","palavrao","desgraca"
-"Puta merda, esqueci o carregador em casa","palavrao","puta merda"
-"Voce e muito patetica, sabia?","insulto","patetica"
-"Sinceramente, aquele bug no codigo esta resolvido finalmente","normal",""
-"Sinceramente, o aplicativo do banco esta bem mais rapido agora","normal",""
-"No fim das contas, o cafe da padaria esta excelente aqui perto","normal",""
-"Voce e uma 0t4r14","insulto","0t4r14"
-"Ontem percebi que a agenda da semana esta organizada","normal",""
-"Ontem percebi que as aulas de violao esta comecando esse ano","normal",""
-"Que cacete, furou o pneu no meio do caminho","palavrao","cacete"
-"Ontem percebi que a trilha do fim de semana esta incrivel","normal",""
-"Puts, que peste, esqueci a senha do sistema","palavrao","peste"
-"Essa semana, a trilha no parque esta otima pra esse fim de semana","normal",""
-"Essa semana, a explicacao do professor esta muito boa hoje","normal",""
-"Ele e um patetico completo","insulto","patetico"
-"Voce e uma otaria","insulto","otaria"
-"No fim das contas, a prova de sexta esta exigindo bastante estudo","normal",""
-"Se fizer isso de novo voce vai se arrepender","ameaca",""
-"Voce e muito r3pvgn4nt3, sabia?","insulto","r3pvgn4nt3"
-"Puts, que caralho, a internet caiu de novo","palavrao","caralho"
-"Puta merda, caiu a energia no meio do jogo","palavrao","puta merda"
-"Vou fazer sua vida virar um inferno a partir de hoje","ameaca",""
-"Puts, que desgraca, quebrou o vidro sem querer","palavrao","desgraca"
-"Para de ser tao canalha","insulto","canalha"
-"P o r r a, a impressora emperrou de novo","palavrao","p o r r a"
-"Ontem percebi que o apartamento novo esta otimo, vamos alugar","normal",""
-"Porra, isso doeu pra caramba","palavrao","porra"
-"Puts, que foda-se, a internet caiu de novo","palavrao","foda-se"
-"Essa semana, esse filme esta muito bom, recomendo demais","normal",""
-"No fim das contas, o grupo de estudos esta rendendo bastante","normal",""
-"Pode ter certeza que isso nao fica assim","ameaca",""
-"Para de ser tao traira","insulto","traira"
-"Que desgraca, esqueci a senha do sistema","palavrao","desgraca"
-"Sinceramente, o pao novo da padaria esta uma delicia","normal",""
-"Que pessoa verme, nao acredito","insulto","verme"
-"Puta merda... caiu a energia no meio do jogo","palavrao","puta merda"
-"Voce e muito sem-vergonha, sabia?","insulto","sem-vergonha"
-"Voce nao presta pra nada","insulto",""
-"Sinceramente, o cafe da padaria esta excelente aqui perto","normal",""
-"Voce e uma arrombada","insulto","arrombada"
-"Desgraca... furou o pneu no meio do caminho","palavrao","desgraca"
-"Voce e muito traira, sabia?","insulto","traira"
-"Puts, que foda-se, acabou a bateria do celular","palavrao","foda-se"
-"O atendimento na loja esta excelente, gostei bastante","normal",""
-"Esse cara e um otario","insulto","otario"
-"Essa semana, aquele bug no codigo esta resolvido finalmente","normal",""
-"Para de ser tao pilantra","insulto","pilantra"
-"Para de ser tao cafajeste","insulto","cafajeste"
-"Essa mulher e uma escrota","insulto","escrota"
-"Esse cara e um ridiculo","insulto","ridiculo"
-"Foda-se... acabou a bateria do celular","palavrao","foda-se"
-"Nao vou esquecer isso, pode ter certeza","ameaca",""
-"A festa de aniversario esta sendo organizada pro fim de semana","normal",""
-"Voce e muito (4fajeste, sabia?","insulto","(4fajeste"
-"Porra... o onibus passou direto sem parar","palavrao","porra"
-"Sinceramente, a palestra de tecnologia esta otima, aprendi bastante","normal",""
-"Puts, que maldito, o voo foi cancelado em cima da hora","palavrao","maldito"
-"Capeta... a internet caiu de novo","palavrao","capeta"
-"Sinceramente, o atendimento na loja esta excelente, gostei bastante","normal",""
-"Puts, que desgraca, a impressora emperrou de novo","palavrao","desgraca"
-"Peste... derramei cafe no teclado","palavrao","peste"
-"Bosta... a impressora emperrou de novo","palavrao","bosta"
-"E bom voce tomar cuidado por onde anda","ameaca",""
-"Sinceramente, o parque da cidade esta lindo nessa epoca do ano","normal",""
-"Foda-se... o voo foi cancelado em cima da hora","palavrao","foda-se"
-"Puta merda... a internet caiu de novo","palavrao","puta merda"
-"No fim das contas, a nova serie esta otima, estreou ontem","normal",""
-"Ontem percebi que o show de ontem esta incrivel, muita energia","normal",""
-"Sinceramente, meu time esta campeao esse ano","normal",""
-"Se cruzar comigo de novo vai se arrepender","ameaca",""
-"Maldito... o voo foi cancelado em cima da hora","palavrao","maldito"
-"Fica esperando, ainda vou te pegar","ameaca",""
-"Pra falar a verdade, o documentario esta muito interessante","normal",""
-"Que foda-se, o onibus passou direto sem parar","palavrao","foda-se"
-"Para de ser tao 1nf3l1z","insulto","1nf3l1z"
-"Que pessoa sem-vergonha, nao acredito","insulto","sem-vergonha"
-"Isso nao vai ficar barato, pode esperar","ameaca",""
-"Essa mulher e uma $4f4d4","insulto","$4f4d4"
-"Puts, que praga, o voo foi cancelado em cima da hora","palavrao","praga"
-"Para de ser tao (4n4lh4","insulto","(4n4lh4"
-"Que caralho, derramei cafe no teclado","palavrao","caralho"
-"D3$gr4(4, o wifi cortou no meio da call","palavrao","d3$gr4(4"
-"Para de ser tao sacana","insulto","sacana"
-"A resenha do livro esta planejada pro grupo","normal",""
-"A serie nova esta assistida no fim de semana","normal",""
-"No fim das contas, o bairro novo esta com vista linda pro mar","normal",""
-"Sinceramente, os ingressos do show esta comprados pro mes que vem","normal",""
-"Que praga, a impressora emperrou de novo","palavrao","praga"
-"Sinceramente, o dia hoje esta tranquilo, sem novidades","normal",""
-"Puts, que merda, esqueci o carregador em casa","palavrao","merda"
-"Isso vai custar caro pra voce","ameaca",""
-"Para de ser tao arrombado","insulto","arrombado"
-"Que capeta, acabou a bateria do celular","palavrao","capeta"
-"So pode ser $4fado pra fazer isso","insulto","$4fado"
-"Inferno, a impressora emperrou de novo","palavrao","inferno"
-"So pode ser ridiculo pra fazer isso","insulto","ridiculo"
-"Merda, o wifi cortou no meio da call","palavrao","merda"
-"No fim das contas, o documentario esta muito interessante","normal",""
-"Todo mundo te acha ridiculo","insulto",""
-"Que peste, isso doeu pra caramba","palavrao","peste"
-"Voce e muito idiota, sabia?","insulto","idiota"
-"Essa semana, o restaurante japones esta sensacional","normal",""
-"Pra falar a verdade, o relatorio esta terminado antes do prazo","normal",""
-"Caralho... choveu bem na hora que eu ia sair","palavrao","caralho"
-"Nao tem pra onde correr dessa vez","ameaca",""
-"Pra falar a verdade, o livro que voce indicou esta muito bom, terminei de ler","normal",""
-"Vou acabar com sua reputacao","ameaca",""
-"Ele e um p4t3t1(0 completo","insulto","p4t3t1(0"
-"Ela e uma arrombada completa","insulto","arrombada"
-"P u t a   m e r d a, quebrou o vidro sem querer","palavrao","p u t a   m e r d a"
-"Cansei de aturar suas palhacadas","insulto",""
-"Bosta... o wifi cortou no meio da call","palavrao","bosta"
-"Pra falar a verdade, o lancamento no cinema esta otimo, fomos assistir","normal",""
-"Puts, que porra, chegou atrasado de novo","palavrao","porra"
-"Desgraca... quebrou o vidro sem querer","palavrao","desgraca"
-"Porra, chegou atrasado de novo","palavrao","porra"
-"As notas da faculdade esta liberadas semana que vem","normal",""
-"Desgraca... a internet caiu de novo","palavrao","desgraca"
-"Voce e muito repugnante, sabia?","insulto","repugnante"
-"Puts, que capeta, acabou a bateria do celular","palavrao","capeta"
-"Cacete, choveu bem na hora que eu ia sair","palavrao","cacete"
-"Para de ser tao idiota","insulto","idiota"
-"Cuidado, eu nao esqueco facil","ameaca",""
-"Bosta, acabou a bateria do celular","palavrao","bosta"
-"Voce e muito pilantra, sabia?","insulto","pilantra"
-"Voce vai se arrepender de ter feito isso comigo","ameaca",""
-"Pra falar a verdade, o restaurante japones esta sensacional","normal",""
-"Ele e um arrombado completo","insulto","arrombado"
-"Desgraca, travou o computador de novo","palavrao","desgraca"
-"Ontem percebi que o novo album da banda esta muito bom","normal",""
-"Ontem percebi que a biblioteca esta aberta ate mais tarde essa semana","normal",""
-"Puts, que droga, furou o pneu no meio do caminho","palavrao","droga"
-"Ontem percebi que a internet de casa esta bem mais rapida agora","normal",""
-"Inferno... esqueci a senha do sistema","palavrao","inferno"
-"Puts, que droga, o wifi cortou no meio da call","palavrao","droga"
-"Caralho, a internet caiu de novo","palavrao","caralho"
-"Essa semana, o transito hoje esta bem tranquilo","normal",""
-"Esse cara e um safado","insulto","safado"
-"Puts, que droga, o carro nao quis ligar hoje","palavrao","droga"
-"Puts, que inferno, chegou atrasado de novo","palavrao","inferno"
-"O cafe da padaria esta excelente aqui perto","normal",""
-"Merda, isso doeu pra caramba","palavrao","merda"
-"Capeta... o carro nao quis ligar hoje","palavrao","capeta"
-"Capeta... o wifi cortou no meio da call","palavrao","capeta"
-"Para de ser tao safada","insulto","safada"
-"Caralho... a internet caiu de novo","palavrao","caralho"
-"Foda-se... o onibus passou direto sem parar","palavrao","foda-se"
-"Voce e muito 0t4rio, sabia?","insulto","0t4rio"
-"Voce e uma n0j3nt4","insulto","n0j3nt4"
-"Que caralho, isso doeu pra caramba","palavrao","caralho"
-"Ontem percebi que o bolo de chocolate esta delicioso, fizemos no fim de semana","normal",""
-"Esse cara e um arrombado","insulto","arrombado"
-"Que praga, furou o pneu no meio do caminho","palavrao","praga"
-"Vou fazer voce engolir cada palavra que disse","ameaca",""
-"Essa semana, o pao da padaria nova esta excelente","normal",""
-"Praga... o voo foi cancelado em cima da hora","palavrao","praga"
-"Que inferno, furou o pneu no meio do caminho","palavrao","inferno"
-"Para de ser tao 1mb3cil","insulto","1mb3cil"
-"Cacete... furou o pneu no meio do caminho","palavrao","cacete"
-"Pra falar a verdade, a prova de sexta esta exigindo bastante estudo","normal",""
-"Puts, que bosta, perdi o onibus de novo","palavrao","bosta"
-"Voce e uma escrota","insulto","escrota"
-"Sinceramente, a serie nova esta assistida no fim de semana","normal",""
-"P0rr4, esqueci a senha do sistema","palavrao","p0rr4"
-"Pra falar a verdade, o show de ontem esta incrivel, muita energia","normal",""
-"Pra falar a verdade, a palestra de tecnologia esta otima, aprendi bastante","normal",""
-"Sinceramente, o evento da faculdade esta muito bem organizado","normal",""
-"Essa semana, a palestra de tecnologia esta otima, aprendi bastante","normal",""
-"Droga, acabou a bateria do celular","palavrao","droga"
-"Para de ser tao escoria","insulto","escoria"
-"O jogo de ontem esta bem disputado","normal",""
-"A reuniao esta produtiva, definimos tudo","normal",""
-"Que pessoa imbecil, nao acredito","insulto","imbecil"
-"Peste... o wifi cortou no meio da call","palavrao","peste"
-"Pra falar a verdade, o grupo de estudos esta rendendo bastante","normal",""
-"Ontem percebi que a caminhada de manha esta otima pra comecar o dia","normal",""
-"Voce e um 0t4r10","insulto","0t4r10"
-"Sinceramente, as notas da faculdade esta liberadas semana que vem","normal",""
-"Voce e muito ridicula, sabia?","insulto","ridicula"
-"Para de ser tao arrombada","insulto","arrombada"
-"Voce nao serve pra nada mesmo","insulto",""
-"Essa semana, a internet de casa esta bem mais rapida agora","normal",""
-"Que inferno, a impressora emperrou de novo","palavrao","inferno"
-"Que pessoa covarde, nao acredito","insulto","covarde"
-"Vou acabar com sua paz de uma vez por todas","ameaca",""
-"Pra falar a verdade, a consulta medica esta marcada pra semana que vem","normal",""
-"Essa semana, a decoracao de fim de ano esta deixando a cidade bonita","normal",""
-"Pra falar a verdade, o dia hoje esta tranquilo, sem novidades","normal",""
-"Vou fazer questao de te ver sofrer","ameaca",""
-"Vou acabar com o seu sossego de vez","ameaca",""
-"Voce vai entender o que e medo de verdade","ameaca",""
-"Voce e muito canalha, sabia?","insulto","canalha"
-"Vou aparecer na sua casa e voce vai ver so","ameaca",""
-"Que praga, derramei cafe no teclado","palavrao","praga"
-"Voce so faz merda desde que entrou aqui","insulto",""
-"Ela e uma d3$gr4(4d4 completa","insulto","d3$gr4(4d4"
-"No fim das contas, as aulas de violao esta comecando esse ano","normal",""
-"O concerto de ontem esta emocionante","normal",""
-"Que maldito, o voo foi cancelado em cima da hora","palavrao","maldito"
-"Voce e uma 4rr0mbada","insulto","4rr0mbada"
-"Que pessoa l i x o, nao acredito","insulto","l i x o"
-"So pode ser p a t e t i c o pra fazer isso","insulto","p a t e t i c o"
-"Inferno... esqueci o carregador em casa","palavrao","inferno"
-"Peste, travou o computador de novo","palavrao","peste"
-"So pode ser ridicula pra fazer isso","insulto","ridicula"
-"Puts, que inferno, furou o pneu no meio do caminho","palavrao","inferno"
-"Porra, o onibus passou direto sem parar","palavrao","porra"
-"Voce e uma nojenta","insulto","nojenta"
-"C a p e t a, perdi o prazo da entrega","palavrao","c a p e t a"
-"Voce e muito escrota, sabia?","insulto","escrota"
-"Que pessoa infeliz, nao acredito","insulto","infeliz"
-"Que peste, derramei cafe no teclado","palavrao","peste"
-"O curso online esta bem interessante","normal",""
-"Que cacete, choveu bem na hora que eu ia sair","palavrao","cacete"
-"No fim das contas, a viagem de feriado esta planejada pra visitar a familia","normal",""
-"Ninguem aguenta voce","insulto",""
-"Voce vai desejar nao ter mexido comigo","ameaca",""
-"Puts, que cacete, chegou atrasado de novo","palavrao","cacete"
-"Inferno... furou o pneu no meio do caminho","palavrao","inferno"
-"A exposicao no museu esta fascinante","normal",""
-"Pra falar a verdade, a trilha do fim de semana esta incrivel","normal",""
-"M4ld1to, furou o pneu no meio do caminho","palavrao","m4ld1to"
-"Puts, que caralho, chegou atrasado de novo","palavrao","caralho"
-"Essa semana, a vaga de estagio esta conseguida essa semana","normal",""
-"Voce e muito n0j3nt0, sabia?","insulto","n0j3nt0"
-"Voce e um safado","insulto","safado"
-"Sinceramente, o time da faculdade esta bem no torneio","normal",""
-"Cacete, chegou atrasado de novo","palavrao","cacete"
-"Nao pense que isso vai ficar assim","ameaca",""
-"Inferno, a internet caiu de novo","palavrao","inferno"
-"Voce e muito v e r m e, sabia?","insulto","v e r m e"
-"Puts, que foda-se, perdi o prazo da entrega","palavrao","foda-se"
-"Voce e muito covarde, sabia?","insulto","covarde"
-"Inferno, esqueci o carregador em casa","palavrao","inferno"
-"Pra falar a verdade, a corrida no parque esta otima pela manha","normal",""
-"Ontem percebi que o restaurante novo esta otimo, vamos almocar la","normal",""
-"Puts, que merda, o wifi cortou no meio da call","palavrao","merda"
-"Nao adianta se esconder, eu vou te achar","ameaca",""
-"No fim das contas, a receita nova esta tentada hoje na cozinha","normal",""
-"Que puta merda, caiu a energia no meio do jogo","palavrao","puta merda"
-"Voce e muito 1d10t4, sabia?","insulto","1d10t4"
-"O show de ontem esta incrivel, muita energia","normal",""
-"No fim das contas, o novo album da banda esta muito bom","normal",""
+mensagem,categoria,termos_ofensivos
+Porra... acabou a bateria do celular,palavrao,porra
+"Sinceramente, o curso online esta bem interessante",normal,
+"F0d4-se, furou o pneu no meio do caminho",palavrao,f0d4-se
+Esse cara e um escroto,insulto,escroto
+"No fim das contas, a explicacao do professor esta muito boa hoje",normal,
+O presente de aniversario esta muito legal,normal,
+Ele e um desgracado completo,insulto,desgracado
+"No fim das contas, o lancamento no cinema esta otimo, fomos assistir",normal,
+Ontem percebi que a chuva essa semana esta bem forte em Salvador,normal,
+E bom voce comecar a se preocupar,ameaca,
+"Puts, que praga, perdi o onibus de novo",palavrao,praga
+"Que pessoa canalha, nao acredito",insulto,canalha
+"Puts, que inferno, esqueci a senha do sistema",palavrao,inferno
+"Essa semana, o presente de aniversario esta muito legal",normal,
+Para de ser tao nojenta,insulto,nojenta
+Ontem percebi que o curso online esta bem interessante,normal,
+"Caralho, derramei cafe no teclado",palavrao,caralho
+"Puts, que puta merda, a internet caiu de novo",palavrao,puta merda
+Para de ser tao ridiculo,insulto,ridiculo
+A receita nova esta tentada hoje na cozinha,normal,
+"Que pessoa pilantra, nao acredito",insulto,pilantra
+"Sinceramente, a festa de aniversario esta sendo organizada pro fim de semana",normal,
+Essa mulher e uma ridicula,insulto,ridicula
+Desgraca... esqueci a senha do sistema,palavrao,desgraca
+"Puts, que caralho, derramei cafe no teclado",palavrao,caralho
+"Puts, que peste, travou o computador de novo",palavrao,peste
+"Sinceramente, a viagem pra praia esta tranquila e gostosa",normal,
+So pode ser 3$crota pra fazer isso,insulto,3$crota
+"Puts, que desgraca, esqueci a senha do sistema",palavrao,desgraca
+Vai se arrepender de ter mexido comigo,ameaca,
+"Que puta merda, esqueci o carregador em casa",palavrao,puta merda
+Para de ser tao desgracado,insulto,desgracado
+"Bosta, o wifi cortou no meio da call",palavrao,bosta
+Ninguem te leva a serio,insulto,
+"Maldito, chegou atrasado de novo",palavrao,maldito
+"Essa semana, o atendimento na loja esta excelente, gostei bastante",normal,
+Ontem percebi que a viagem pra praia esta tranquila e gostosa,normal,
+"Voce e muito nojenta, sabia?",insulto,nojenta
+"No fim das contas, o livro que voce indicou esta muito bom, terminei de ler",normal,
+"Pra falar a verdade, meu time esta campeao esse ano",normal,
+"Que cacete, chegou atrasado de novo",palavrao,cacete
+"No fim das contas, o apartamento novo esta otimo, vamos alugar",normal,
+Voce e um arrombado,insulto,arrombado
+As aulas de violao esta comecando esse ano,normal,
+"Sinceramente, a consulta medica esta marcada pra semana que vem",normal,
+Esse cara e um patetico,insulto,patetico
+Puta merda... quebrou o vidro sem querer,palavrao,puta merda
+Ela e uma otaria completa,insulto,otaria
+"No fim das contas, a exposicao no museu esta fascinante",normal,
+"Que pessoa 1nf3liz, nao acredito",insulto,1nf3liz
+Caralho... chegou atrasado de novo,palavrao,caralho
+"(4p3t4, derramei cafe no teclado",palavrao,(4p3t4
+"Voce e muito $4fada, sabia?",insulto,$4fada
+Caralho... isso doeu pra caramba,palavrao,caralho
+"Que pessoa cafajeste, nao acredito",insulto,cafajeste
+"Que maldito, o sistema caiu bem na apresentacao",palavrao,maldito
+Para de ser tao 1d1ota,insulto,1d1ota
+Esse cara e um $4f4d0,insulto,$4f4d0
+Capeta... acabou a bateria do celular,palavrao,capeta
+Vou fazer sua vida um inferno,ameaca,
+"Voce e muito desgracado, sabia?",insulto,desgracado
+Ela e uma p4t3t1(4 completa,insulto,p4t3t1(4
+"Puts, que cacete, furou o pneu no meio do caminho",palavrao,cacete
+"Puts, que porra, isso doeu pra caramba",palavrao,porra
+Voce e uma 0t4ria,insulto,0t4ria
+Ontem percebi que a vaga de estagio esta conseguida essa semana,normal,
+"Pra falar a verdade, a internet de casa esta bem mais rapida agora",normal,
+O livro novo esta otimo pra ler no fim de semana,normal,
+"Foda-se, o onibus passou direto sem parar",palavrao,foda-se
+"Pra falar a verdade, a entrevista de emprego esta tranquila",normal,
+So pode ser d3$gr4(4d0 pra fazer isso,insulto,d3$gr4(4d0
+Espera so eu te encontrar na rua,ameaca,
+"Essa semana, o pao novo da padaria esta uma delicia",normal,
+"Puts, que cacete, perdi o prazo da entrega",palavrao,cacete
+Caralho... caiu a energia no meio do jogo,palavrao,caralho
+"Que puta merda, chegou atrasado de novo",palavrao,puta merda
+"Capeta, acabou a bateria do celular",palavrao,capeta
+"Puts, que bosta, o wifi cortou no meio da call",palavrao,bosta
+O time da faculdade esta bem no torneio,normal,
+Vou fazer voce se arrepender de cada palavra,ameaca,
+"(4r4lh0, o onibus passou direto sem parar",palavrao,(4r4lh0
+"Voce e muito infeliz, sabia?",insulto,infeliz
+"Puts, que merda, travou o computador de novo",palavrao,merda
+"Puts, que peste, o sistema caiu bem na apresentacao",palavrao,peste
+"Voce e muito imbecil, sabia?",insulto,imbecil
+"Puts, que maldito, furou o pneu no meio do caminho",palavrao,maldito
+"Pr.aga, o carro nao quis ligar hoje",palavrao,pr.aga
+"Que puta merda, a internet caiu de novo",palavrao,puta merda
+Ontem percebi que a corrida no parque esta otima pela manha,normal,
+"Capeta, o sistema caiu bem na apresentacao",palavrao,capeta
+Essa mulher e uma arrombada,insulto,arrombada
+"Pra falar a verdade, o pao da padaria nova esta excelente",normal,
+Melhor rezar pra eu nao te encontrar,ameaca,
+"Que porra, acabou a bateria do celular",palavrao,porra
+"Que inferno, esqueci a senha do sistema",palavrao,inferno
+"Pra falar a verdade, a decoracao de fim de ano esta deixando a cidade bonita",normal,
+Droga... furou o pneu no meio do caminho,palavrao,droga
+"Maldito, o voo foi cancelado em cima da hora",palavrao,maldito
+"1nf3rn0, caiu a energia no meio do jogo",palavrao,1nf3rn0
+"Pra falar a verdade, a entrega do projeto esta dentro do prazo, a equipe se saiu bem",normal,
+"Puts, que bosta, isso doeu pra caramba",palavrao,bosta
+Ninguem suporta ficar perto de voce,insulto,
+Ontem percebi que o aplicativo do banco esta bem mais rapido agora,normal,
+O relatorio esta terminado antes do prazo,normal,
+"Porra, acabou a bateria do celular",palavrao,porra
+Para de ser tao lixo,insulto,lixo
+"Peste, furou o pneu no meio do caminho",palavrao,peste
+"Que pessoa (0v4rd3, nao acredito",insulto,(0v4rd3
+"Puts, que capeta, o carro nao quis ligar hoje",palavrao,capeta
+"Droga, o wifi cortou no meio da call",palavrao,droga
+"Essa semana, a reuniao esta produtiva, definimos tudo",normal,
+"Que pessoa sacana, nao acredito",insulto,sacana
+"No fim das contas, a entrega do projeto esta dentro do prazo, a equipe se saiu bem",normal,
+"Pra falar a verdade, a serie nova esta assistida no fim de semana",normal,
+"Merda, o sistema caiu bem na apresentacao",palavrao,merda
+"Foda-se, acabou a bateria do celular",palavrao,foda-se
+Porra... a internet caiu de novo,palavrao,porra
+"Puts, que desgraca, travou o computador de novo",palavrao,desgraca
+"Inferno, furou o pneu no meio do caminho",palavrao,inferno
+"Sinceramente, a entrega do projeto esta dentro do prazo, a equipe se saiu bem",normal,
+E melhor pedir pra alguem te proteger,ameaca,
+"Sinceramente, o relatorio esta terminado antes do prazo",normal,
+"Que pessoa traira, nao acredito",insulto,traira
+Porra... chegou atrasado de novo,palavrao,porra
+"Foda-se, a impressora emperrou de novo",palavrao,foda-se
+"Pra falar a verdade, a trilha no parque esta otima pra esse fim de semana",normal,
+"Puts, que praga, derramei cafe no teclado",palavrao,praga
+O novo album da banda esta muito bom,normal,
+Esse cara e um 3$croto,insulto,3$croto
+Cacete... chegou atrasado de novo,palavrao,cacete
+So pode ser desgracada pra fazer isso,insulto,desgracada
+Maldito... chegou atrasado de novo,palavrao,maldito
+"Voce so atrapalha, nunca ajuda",insulto,
+Puta merda... isso doeu pra caramba,palavrao,puta merda
+"A nova serie esta otima, estreou ontem",normal,
+Ontem percebi que meu time esta campeao esse ano,normal,
+Para de ser tao p1l4ntr4,insulto,p1l4ntr4
+Essa mulher e uma patetica,insulto,patetica
+"Puts, que maldito, chegou atrasado de novo",palavrao,maldito
+Praga... furou o pneu no meio do caminho,palavrao,praga
+"Ainda vai se ver comigo, espera so",ameaca,
+"Puts, que peste, o wifi cortou no meio da call",palavrao,peste
+Esse cara e um ridiculo,insulto,ridiculo
+O bairro novo esta com vista linda pro mar,normal,
+Voce e uma desgracada,insulto,desgracada
+"Que pessoa v3rm3, nao acredito",insulto,v3rm3
+Ninguem quer voce por perto,insulto,
+"Voce e muito 4rr0mb4d0, sabia?",insulto,4rr0mb4d0
+"Essa semana, o evento da faculdade esta muito bem organizado",normal,
+O pao da padaria nova esta excelente,normal,
+"Pra falar a verdade, a viagem pra praia esta tranquila e gostosa",normal,
+"Que porra, chegou atrasado de novo",palavrao,porra
+A agenda da semana esta organizada,normal,
+"Puts, que merda, o sistema caiu bem na apresentacao",palavrao,merda
+"Essa semana, os ingressos do show esta comprados pro mes que vem",normal,
+Ela e uma desgracada completa,insulto,desgracada
+"Que cacete, perdi o prazo da entrega",palavrao,cacete
+Cacete... choveu bem na hora que eu ia sair,palavrao,cacete
+Cacete... perdi o prazo da entrega,palavrao,cacete
+"Essa semana, o novo emprego esta comecando semana que vem",normal,
+"Puts, que peste, derramei cafe no teclado",palavrao,peste
+"Que pessoa $3m-vergonha, nao acredito",insulto,$3m-vergonha
+"Que maldito, chegou atrasado de novo",palavrao,maldito
+"Que pessoa $4cana, nao acredito",insulto,$4cana
+Para de ser tao verme,insulto,verme
+Ontem percebi que o parque da cidade esta lindo nessa epoca do ano,normal,
+"Po*rra, acabou a bateria do celular",palavrao,po*rra
+"Voce e muito lixo, sabia?",insulto,lixo
+"Pra falar a verdade, a reuniao esta produtiva, definimos tudo",normal,
+"Praga, furou o pneu no meio do caminho",palavrao,praga
+"Que merda, travou o computador de novo",palavrao,merda
+Ele e um otario completo,insulto,otario
+"Cacete, furou o pneu no meio do caminho",palavrao,cacete
+"Sinceramente, a final do campeonato esta assistida com a galera",normal,
+Ontem percebi que o livro novo esta otimo pra ler no fim de semana,normal,
+Bosta... derramei cafe no teclado,palavrao,bosta
+"Essa semana, o time da faculdade esta bem no torneio",normal,
+"Que pessoa repugnante, nao acredito",insulto,repugnante
+Voce e uma patetica,insulto,patetica
+Voce e um nojento,insulto,nojento
+"Pra falar a verdade, esse filme esta muito bom, recomendo demais",normal,
+"Pra falar a verdade, a chuva essa semana esta bem forte em Salvador",normal,
+"Puts, que foda-se, o voo foi cancelado em cima da hora",palavrao,foda-se
+"Que capeta, a internet caiu de novo",palavrao,capeta
+Para de ser tao covarde,insulto,covarde
+Merda... esqueci o carregador em casa,palavrao,merda
+Vou aparecer ai quando voce menos imaginar,ameaca,
+"No fim das contas, o evento da faculdade esta muito bem organizado",normal,
+"Puts, que desgraca, furou o pneu no meio do caminho",palavrao,desgraca
+Ela e uma safada completa,insulto,safada
+"No fim das contas, o presente de aniversario esta muito legal",normal,
+"Pra falar a verdade, a receita nova esta tentada hoje na cozinha",normal,
+Voce e a pior pessoa que eu conheco,insulto,
+"B0$ta, furou o pneu no meio do caminho",palavrao,b0$ta
+Ontem percebi que as notas da faculdade esta liberadas semana que vem,normal,
+"Sinceramente, a chuva essa semana esta bem forte em Salvador",normal,
+"Puts, que desgraca, a internet caiu de novo",palavrao,desgraca
+Ontem percebi que a entrevista de emprego esta tranquila,normal,
+"Capeta, derramei cafe no teclado",palavrao,capeta
+Vou fazer voce se arrepender amargamente,ameaca,
+Vou tomar satisfacao com voce pessoalmente,ameaca,
+Para de ser tao nojento,insulto,nojento
+O novo emprego esta comecando semana que vem,normal,
+Voce e um escroto,insulto,escroto
+Voce e um 4rr0mbado,insulto,4rr0mbado
+Voce e um peso morto pro grupo,insulto,
+Ontem percebi que a trilha no parque esta otima pra esse fim de semana,normal,
+"Puts, que droga, perdi o prazo da entrega",palavrao,droga
+"Sinceramente, a decoracao de fim de ano esta deixando a cidade bonita",normal,
+Bosta... perdi o onibus de novo,palavrao,bosta
+Ela e uma escrota completa,insulto,escrota
+Inferno... a internet caiu de novo,palavrao,inferno
+"Puts, que capeta, a internet caiu de novo",palavrao,capeta
+"Sinceramente, a corrida no parque esta otima pela manha",normal,
+"Que merda, esqueci o carregador em casa",palavrao,merda
+Para de ser tao repugnante,insulto,repugnante
+Ontem percebi que aquele bug no codigo esta resolvido finalmente,normal,
+"Que droga, o wifi cortou no meio da call",palavrao,droga
+"Merda, a impressora emperrou de novo",palavrao,merda
+"Essa semana, a final do campeonato esta assistida com a galera",normal,
+"Puts, que inferno, a internet caiu de novo",palavrao,inferno
+So pode ser 3$(r0t0 pra fazer isso,insulto,3$(r0t0
+"Foda - s e, a internet caiu de novo",palavrao,foda - s e
+Ela e uma ridicula completa,insulto,ridicula
+"Droga, perdi o prazo da entrega",palavrao,droga
+"P3$te, acabou a bateria do celular",palavrao,p3$te
+So pode ser otaria pra fazer isso,insulto,otaria
+"Que desgraca, travou o computador de novo",palavrao,desgraca
+"Cuidado com o que voce fala, vai sobrar pra voce",ameaca,
+Inferno... chegou atrasado de novo,palavrao,inferno
+"Que pessoa 3$coria, nao acredito",insulto,3$coria
+Ontem percebi que o transito hoje esta bem tranquilo,normal,
+"Puts, que bosta, derramei cafe no teclado",palavrao,bosta
+"Que bosta, a impressora emperrou de novo",palavrao,bosta
+Peste... esqueci a senha do sistema,palavrao,peste
+Ele e um nojento completo,insulto,nojento
+"Que capeta, o sistema caiu bem na apresentacao",palavrao,capeta
+Essa mulher e uma safada,insulto,safada
+So pode ser nojenta pra fazer isso,insulto,nojenta
+"Que pessoa $4(4n4, nao acredito",insulto,$4(4n4
+"No fim das contas, o projeto esta terminado dentro do prazo",normal,
+"Droga, a internet caiu de novo",palavrao,droga
+Droga... o carro nao quis ligar hoje,palavrao,droga
+E melhor comecar a olhar pra tras,ameaca,
+"Nao vou deixar barato, pode esperar",ameaca,
+"Essa semana, o jogo de ontem esta bem disputado",normal,
+"Fica esperando, a conta vai chegar",ameaca,
+Ontem percebi que o concerto de ontem esta emocionante,normal,
+Maldito... o sistema caiu bem na apresentacao,palavrao,maldito
+Voce e uma safada,insulto,safada
+Ele e um escroto completo,insulto,escroto
+Voce e um patetico,insulto,patetico
+Para de ser tao escroto,insulto,escroto
+"Que capeta, o wifi cortou no meio da call",palavrao,capeta
+Para de ser tao r1d1(vl0,insulto,r1d1(vl0
+"Puts, que praga, a impressora emperrou de novo",palavrao,praga
+Voce nao vai ter sossego depois disso,ameaca,
+Para de ser tao imbecil,insulto,imbecil
+"Puts, que merda, isso doeu pra caramba",palavrao,merda
+"Sinceramente, o bolo de chocolate esta delicioso, fizemos no fim de semana",normal,
+"Voce e muito 1mb3(1l, sabia?",insulto,1mb3(1l
+"Voce e muito (4nalha, sabia?",insulto,(4nalha
+Ontem percebi que a exposicao no museu esta fascinante,normal,
+"Que caralho, choveu bem na hora que eu ia sair",palavrao,caralho
+"Peste, esqueci a senha do sistema",palavrao,peste
+"Voce e muito $3m-v3rg0nh4, sabia?",insulto,$3m-v3rg0nh4
+"Sinceramente, a prova de sexta esta exigindo bastante estudo",normal,
+Os ingressos do show esta comprados pro mes que vem,normal,
+"Voce e muito 4rr0mb4d4, sabia?",insulto,4rr0mb4d4
+"O lancamento no cinema esta otimo, fomos assistir",normal,
+"Voce e muito patetica, sabia?",insulto,patetica
+"Pra falar a verdade, a explicacao do professor esta muito boa hoje",normal,
+"Caralho, choveu bem na hora que eu ia sair",palavrao,caralho
+Vou fazer voce se arrepender pelo resto da vida,ameaca,
+"Puts, que peste, isso doeu pra caramba",palavrao,peste
+Essa mulher e uma desgracada,insulto,desgracada
+"Praga, perdi o onibus de novo",palavrao,praga
+"Voce e muito escoria, sabia?",insulto,escoria
+A viagem de feriado esta planejada pra visitar a familia,normal,
+Vou te pegar depois da aula,ameaca,
+"Voce e muito sacana, sabia?",insulto,sacana
+"Puts, que porra, a internet caiu de novo",palavrao,porra
+"Que pessoa lixo, nao acredito",insulto,lixo
+Esse cara e um desgracado,insulto,desgracado
+Para de ser tao infeliz,insulto,infeliz
+Para de ser tao r1d1(vl4,insulto,r1d1(vl4
+"No fim das contas, o aplicativo do banco esta bem mais rapido agora",normal,
+"Que pessoa tr41r4, nao acredito",insulto,tr41r4
+"Sinceramente, a resenha do livro esta planejada pro grupo",normal,
+"Voce e muito patetico, sabia?",insulto,patetico
+"O livro que voce indicou esta muito bom, terminei de ler",normal,
+Ontem percebi que o documentario esta muito interessante,normal,
+"Essa semana, a biblioteca esta aberta ate mais tarde essa semana",normal,
+"No fim das contas, a festa de aniversario esta sendo organizada pro fim de semana",normal,
+"Merda, travou o computador de novo",palavrao,merda
+"Ontem percebi que o dia hoje esta tranquilo, sem novidades",normal,
+Ontem percebi que o grupo de estudos esta rendendo bastante,normal,
+Ele e um safado completo,insulto,safado
+"Pra falar a verdade, a final do campeonato esta assistida com a galera",normal,
+"Puts, que puta merda, esqueci o carregador em casa",palavrao,puta merda
+"Essa semana, o restaurante novo esta otimo, vamos almocar la",normal,
+"Sinceramente, a entrevista de emprego esta tranquila",normal,
+"Puts, que droga, acabou a bateria do celular",palavrao,droga
+Vou destruir tudo que voce construiu,ameaca,
+"Voce e muito cafajeste, sabia?",insulto,cafajeste
+E melhor voce se cuidar a partir de agora,ameaca,
+"No fim das contas, a biblioteca esta aberta ate mais tarde essa semana",normal,
+"Sinceramente, o livro novo esta otimo pra ler no fim de semana",normal,
+Desgraca... a impressora emperrou de novo,palavrao,desgraca
+"No fim das contas, a caminhada de manha esta otima pra comecar o dia",normal,
+"Cacete, o onibus passou direto sem parar",palavrao,cacete
+"Pra falar a verdade, a resenha do livro esta planejada pro grupo",normal,
+"Que maldito, o onibus passou direto sem parar",palavrao,maldito
+"Desgraca, esqueci a senha do sistema",palavrao,desgraca
+"Puts, que merda, a impressora emperrou de novo",palavrao,merda
+Vou aparecer quando voce menos esperar,ameaca,
+"Voce e muito safado, sabia?",insulto,safado
+"Foda-se, a internet caiu de novo",palavrao,foda-se
+"Esse filme esta muito bom, recomendo demais",normal,
+"Que caralho, a internet caiu de novo",palavrao,caralho
+"Essa semana, a nova serie esta otima, estreou ontem",normal,
+Bosta... acabou a bateria do celular,palavrao,bosta
+Ontem percebi que o restaurante japones esta sensacional,normal,
+"O bolo de chocolate esta delicioso, fizemos no fim de semana",normal,
+Vou acabar com voce,ameaca,
+"No fim das contas, o jogo de ontem esta bem disputado",normal,
+Voce mexeu com a pessoa errada,ameaca,
+"Puts, que capeta, derramei cafe no teclado",palavrao,capeta
+"Sinceramente, o apartamento novo esta otimo, vamos alugar",normal,
+Voce vai pagar caro por isso,ameaca,
+Para de ser tao pilantra,insulto,pilantra
+"Pra falar a verdade, o novo emprego esta comecando semana que vem",normal,
+"No fim das contas, o parque da cidade esta lindo nessa epoca do ano",normal,
+Para de ser tao patetica,insulto,patetica
+"Que pessoa idiota, nao acredito",insulto,idiota
+Para de ser tao 3$(r0t4,insulto,3$(r0t4
+So pode ser desgracado pra fazer isso,insulto,desgracado
+"Capeta, o wifi cortou no meio da call",palavrao,capeta
+Peste... travou o computador de novo,palavrao,peste
+"(4peta, o onibus passou direto sem parar",palavrao,(4peta
+Ontem percebi que a viagem de feriado esta planejada pra visitar a familia,normal,
+Essa mulher e uma otaria,insulto,otaria
+Para de ser tao l1x0,insulto,l1x0
+O projeto esta terminado dentro do prazo,normal,
+"Sinceramente, o bairro novo esta com vista linda pro mar",normal,
+"No fim das contas, a trilha do fim de semana esta incrivel",normal,
+"Que desgraca, a internet caiu de novo",palavrao,desgraca
+"Pra falar a verdade, o restaurante novo esta otimo, vamos almocar la",normal,
+Voce e um otario,insulto,otario
+"Que bosta, perdi o onibus de novo",palavrao,bosta
+"No fim das contas, a agenda da semana esta organizada",normal,
+"Cacete, esqueci a senha do sistema",palavrao,cacete
+"Que droga, o carro nao quis ligar hoje",palavrao,droga
+"Que pessoa escoria, nao acredito",insulto,escoria
+Ele e um ridiculo completo,insulto,ridiculo
+"D3$graca, travou o computador de novo",palavrao,d3$graca
+Um dia voce ainda vai me pagar por isso,ameaca,
+Esse cara e um nojento,insulto,nojento
+Voce ainda vai implorar pra isso parar,ameaca,
+"Peste, o sistema caiu bem na apresentacao",palavrao,peste
+Capeta... derramei cafe no teclado,palavrao,capeta
+"Voce e muito 3$(0r14, sabia?",insulto,3$(0r14
+Voce nao sabe do que eu sou capaz,ameaca,
+Da proxima vez nao vai escapar,ameaca,
+"Voce e muito (0varde, sabia?",insulto,(0varde
+"Que pessoa (4f4j3$t3, nao acredito",insulto,(4f4j3$t3
+"Sinceramente, a caminhada de manha esta otima pra comecar o dia",normal,
+"Puts, que foda-se, o onibus passou direto sem parar",palavrao,foda-se
+"Que merda, o sistema caiu bem na apresentacao",palavrao,merda
+"Que desgraca, furou o pneu no meio do caminho",palavrao,desgraca
+Para de ser tao sem-vergonha,insulto,sem-vergonha
+"Que droga, perdi o prazo da entrega",palavrao,droga
+"Caralho, caiu a energia no meio do jogo",palavrao,caralho
+"(4ralho, esqueci a senha do sistema",palavrao,(4ralho
+"Voce e muito verme, sabia?",insulto,verme
+"Pra falar a verdade, a vaga de estagio esta conseguida essa semana",normal,
+"Voce e muito otario, sabia?",insulto,otario
+"No fim das contas, o pao novo da padaria esta uma delicia",normal,
+"Sinceramente, o transito hoje esta bem tranquilo",normal,
+"Desgraca, a impressora emperrou de novo",palavrao,desgraca
+"Puta merda, esqueci o carregador em casa",palavrao,puta merda
+"Sinceramente, aquele bug no codigo esta resolvido finalmente",normal,
+"Sinceramente, o aplicativo do banco esta bem mais rapido agora",normal,
+"No fim das contas, o cafe da padaria esta excelente aqui perto",normal,
+Voce e uma 0t4r14,insulto,0t4r14
+Ontem percebi que a agenda da semana esta organizada,normal,
+Ontem percebi que as aulas de violao esta comecando esse ano,normal,
+"Que cacete, furou o pneu no meio do caminho",palavrao,cacete
+Ontem percebi que a trilha do fim de semana esta incrivel,normal,
+"Puts, que peste, esqueci a senha do sistema",palavrao,peste
+"Essa semana, a trilha no parque esta otima pra esse fim de semana",normal,
+"Essa semana, a explicacao do professor esta muito boa hoje",normal,
+Ele e um patetico completo,insulto,patetico
+Voce e uma otaria,insulto,otaria
+"No fim das contas, a prova de sexta esta exigindo bastante estudo",normal,
+Se fizer isso de novo voce vai se arrepender,ameaca,
+"Voce e muito r3pvgn4nt3, sabia?",insulto,r3pvgn4nt3
+"Puts, que caralho, a internet caiu de novo",palavrao,caralho
+"Puta merda, caiu a energia no meio do jogo",palavrao,puta merda
+Vou fazer sua vida virar um inferno a partir de hoje,ameaca,
+"Puts, que desgraca, quebrou o vidro sem querer",palavrao,desgraca
+Para de ser tao canalha,insulto,canalha
+"Porra, a impressora emperrou de novo",palavrao,porra
+"Ontem percebi que o apartamento novo esta otimo, vamos alugar",normal,
+"Porra, isso doeu pra caramba",palavrao,porra
+"Puts, que foda-se, a internet caiu de novo",palavrao,foda-se
+"Essa semana, esse filme esta muito bom, recomendo demais",normal,
+"No fim das contas, o grupo de estudos esta rendendo bastante",normal,
+Pode ter certeza que isso nao fica assim,ameaca,
+Para de ser tao traira,insulto,traira
+"Que desgraca, esqueci a senha do sistema",palavrao,desgraca
+"Sinceramente, o pao novo da padaria esta uma delicia",normal,
+"Que pessoa verme, nao acredito",insulto,verme
+Puta merda... caiu a energia no meio do jogo,palavrao,puta merda
+"Voce e muito sem-vergonha, sabia?",insulto,sem-vergonha
+Voce nao presta pra nada,insulto,
+"Sinceramente, o cafe da padaria esta excelente aqui perto",normal,
+Voce e uma arrombada,insulto,arrombada
+Desgraca... furou o pneu no meio do caminho,palavrao,desgraca
+"Voce e muito traira, sabia?",insulto,traira
+"Puts, que foda-se, acabou a bateria do celular",palavrao,foda-se
+"O atendimento na loja esta excelente, gostei bastante",normal,
+Esse cara e um otario,insulto,otario
+"Essa semana, aquele bug no codigo esta resolvido finalmente",normal,
+Para de ser tao cafajeste,insulto,cafajeste
+Essa mulher e uma escrota,insulto,escrota
+Foda-se... acabou a bateria do celular,palavrao,foda-se
+"Nao vou esquecer isso, pode ter certeza",ameaca,
+A festa de aniversario esta sendo organizada pro fim de semana,normal,
+"Voce e muito (4fajeste, sabia?",insulto,(4fajeste
+Porra... o onibus passou direto sem parar,palavrao,porra
+"Sinceramente, a palestra de tecnologia esta otima, aprendi bastante",normal,
+"Puts, que maldito, o voo foi cancelado em cima da hora",palavrao,maldito
+Capeta... a internet caiu de novo,palavrao,capeta
+"Sinceramente, o atendimento na loja esta excelente, gostei bastante",normal,
+"Puts, que desgraca, a impressora emperrou de novo",palavrao,desgraca
+Peste... derramei cafe no teclado,palavrao,peste
+Bosta... a impressora emperrou de novo,palavrao,bosta
+E bom voce tomar cuidado por onde anda,ameaca,
+"Sinceramente, o parque da cidade esta lindo nessa epoca do ano",normal,
+Foda-se... o voo foi cancelado em cima da hora,palavrao,foda-se
+Puta merda... a internet caiu de novo,palavrao,puta merda
+"No fim das contas, a nova serie esta otima, estreou ontem",normal,
+"Ontem percebi que o show de ontem esta incrivel, muita energia",normal,
+"Sinceramente, meu time esta campeao esse ano",normal,
+Se cruzar comigo de novo vai se arrepender,ameaca,
+Maldito... o voo foi cancelado em cima da hora,palavrao,maldito
+"Fica esperando, ainda vou te pegar",ameaca,
+"Pra falar a verdade, o documentario esta muito interessante",normal,
+"Que foda-se, o onibus passou direto sem parar",palavrao,foda-se
+Para de ser tao 1nf3l1z,insulto,1nf3l1z
+"Que pessoa sem-vergonha, nao acredito",insulto,sem-vergonha
+"Isso nao vai ficar barato, pode esperar",ameaca,
+Essa mulher e uma $4f4d4,insulto,$4f4d4
+"Puts, que praga, o voo foi cancelado em cima da hora",palavrao,praga
+Para de ser tao (4n4lh4,insulto,(4n4lh4
+"Que caralho, derramei cafe no teclado",palavrao,caralho
+"D3$gr4(4, o wifi cortou no meio da call",palavrao,d3$gr4(4
+Para de ser tao sacana,insulto,sacana
+A resenha do livro esta planejada pro grupo,normal,
+A serie nova esta assistida no fim de semana,normal,
+"No fim das contas, o bairro novo esta com vista linda pro mar",normal,
+"Sinceramente, os ingressos do show esta comprados pro mes que vem",normal,
+"Que praga, a impressora emperrou de novo",palavrao,praga
+"Sinceramente, o dia hoje esta tranquilo, sem novidades",normal,
+"Puts, que merda, esqueci o carregador em casa",palavrao,merda
+Isso vai custar caro pra voce,ameaca,
+Para de ser tao arrombado,insulto,arrombado
+"Que capeta, acabou a bateria do celular",palavrao,capeta
+So pode ser $4fado pra fazer isso,insulto,$4fado
+"Inferno, a impressora emperrou de novo",palavrao,inferno
+So pode ser ridiculo pra fazer isso,insulto,ridiculo
+"Merda, o wifi cortou no meio da call",palavrao,merda
+"No fim das contas, o documentario esta muito interessante",normal,
+Todo mundo te acha ridiculo,insulto,
+"Que peste, isso doeu pra caramba",palavrao,peste
+"Voce e muito idiota, sabia?",insulto,idiota
+"Essa semana, o restaurante japones esta sensacional",normal,
+"Pra falar a verdade, o relatorio esta terminado antes do prazo",normal,
+Caralho... choveu bem na hora que eu ia sair,palavrao,caralho
+Nao tem pra onde correr dessa vez,ameaca,
+"Pra falar a verdade, o livro que voce indicou esta muito bom, terminei de ler",normal,
+Vou acabar com sua reputacao,ameaca,
+Ele e um p4t3t1(0 completo,insulto,p4t3t1(0
+Ela e uma arrombada completa,insulto,arrombada
+"Puta   merda, quebrou o vidro sem querer",palavrao,puta   merda
+Cansei de aturar suas palhacadas,insulto,
+Bosta... o wifi cortou no meio da call,palavrao,bosta
+"Pra falar a verdade, o lancamento no cinema esta otimo, fomos assistir",normal,
+"Puts, que porra, chegou atrasado de novo",palavrao,porra
+Desgraca... quebrou o vidro sem querer,palavrao,desgraca
+"Porra, chegou atrasado de novo",palavrao,porra
+As notas da faculdade esta liberadas semana que vem,normal,
+Desgraca... a internet caiu de novo,palavrao,desgraca
+"Voce e muito repugnante, sabia?",insulto,repugnante
+"Puts, que capeta, acabou a bateria do celular",palavrao,capeta
+"Cacete, choveu bem na hora que eu ia sair",palavrao,cacete
+Para de ser tao idiota,insulto,idiota
+"Cuidado, eu nao esqueco facil",ameaca,
+"Bosta, acabou a bateria do celular",palavrao,bosta
+"Voce e muito pilantra, sabia?",insulto,pilantra
+Voce vai se arrepender de ter feito isso comigo,ameaca,
+"Pra falar a verdade, o restaurante japones esta sensacional",normal,
+Ele e um arrombado completo,insulto,arrombado
+"Desgraca, travou o computador de novo",palavrao,desgraca
+Ontem percebi que o novo album da banda esta muito bom,normal,
+Ontem percebi que a biblioteca esta aberta ate mais tarde essa semana,normal,
+"Puts, que droga, furou o pneu no meio do caminho",palavrao,droga
+Ontem percebi que a internet de casa esta bem mais rapida agora,normal,
+Inferno... esqueci a senha do sistema,palavrao,inferno
+"Puts, que droga, o wifi cortou no meio da call",palavrao,droga
+"Caralho, a internet caiu de novo",palavrao,caralho
+"Essa semana, o transito hoje esta bem tranquilo",normal,
+Esse cara e um safado,insulto,safado
+"Puts, que droga, o carro nao quis ligar hoje",palavrao,droga
+"Puts, que inferno, chegou atrasado de novo",palavrao,inferno
+O cafe da padaria esta excelente aqui perto,normal,
+"Merda, isso doeu pra caramba",palavrao,merda
+Capeta... o carro nao quis ligar hoje,palavrao,capeta
+Capeta... o wifi cortou no meio da call,palavrao,capeta
+Para de ser tao safada,insulto,safada
+Caralho... a internet caiu de novo,palavrao,caralho
+Foda-se... o onibus passou direto sem parar,palavrao,foda-se
+"Voce e muito 0t4rio, sabia?",insulto,0t4rio
+Voce e uma n0j3nt4,insulto,n0j3nt4
+"Que caralho, isso doeu pra caramba",palavrao,caralho
+"Ontem percebi que o bolo de chocolate esta delicioso, fizemos no fim de semana",normal,
+Esse cara e um arrombado,insulto,arrombado
+"Que praga, furou o pneu no meio do caminho",palavrao,praga
+Vou fazer voce engolir cada palavra que disse,ameaca,
+"Essa semana, o pao da padaria nova esta excelente",normal,
+Praga... o voo foi cancelado em cima da hora,palavrao,praga
+"Que inferno, furou o pneu no meio do caminho",palavrao,inferno
+Para de ser tao 1mb3cil,insulto,1mb3cil
+Cacete... furou o pneu no meio do caminho,palavrao,cacete
+"Pra falar a verdade, a prova de sexta esta exigindo bastante estudo",normal,
+"Puts, que bosta, perdi o onibus de novo",palavrao,bosta
+Voce e uma escrota,insulto,escrota
+"Sinceramente, a serie nova esta assistida no fim de semana",normal,
+"P0rr4, esqueci a senha do sistema",palavrao,p0rr4
+"Pra falar a verdade, o show de ontem esta incrivel, muita energia",normal,
+"Pra falar a verdade, a palestra de tecnologia esta otima, aprendi bastante",normal,
+"Sinceramente, o evento da faculdade esta muito bem organizado",normal,
+"Essa semana, a palestra de tecnologia esta otima, aprendi bastante",normal,
+"Droga, acabou a bateria do celular",palavrao,droga
+Para de ser tao escoria,insulto,escoria
+O jogo de ontem esta bem disputado,normal,
+"A reuniao esta produtiva, definimos tudo",normal,
+"Que pessoa imbecil, nao acredito",insulto,imbecil
+Peste... o wifi cortou no meio da call,palavrao,peste
+"Pra falar a verdade, o grupo de estudos esta rendendo bastante",normal,
+Ontem percebi que a caminhada de manha esta otima pra comecar o dia,normal,
+Voce e um 0t4r10,insulto,0t4r10
+"Sinceramente, as notas da faculdade esta liberadas semana que vem",normal,
+"Voce e muito ridicula, sabia?",insulto,ridicula
+Para de ser tao arrombada,insulto,arrombada
+Voce nao serve pra nada mesmo,insulto,
+"Essa semana, a internet de casa esta bem mais rapida agora",normal,
+"Que inferno, a impressora emperrou de novo",palavrao,inferno
+"Que pessoa covarde, nao acredito",insulto,covarde
+Vou acabar com sua paz de uma vez por todas,ameaca,
+"Pra falar a verdade, a consulta medica esta marcada pra semana que vem",normal,
+"Essa semana, a decoracao de fim de ano esta deixando a cidade bonita",normal,
+"Pra falar a verdade, o dia hoje esta tranquilo, sem novidades",normal,
+Vou fazer questao de te ver sofrer,ameaca,
+Vou acabar com o seu sossego de vez,ameaca,
+Voce vai entender o que e medo de verdade,ameaca,
+"Voce e muito canalha, sabia?",insulto,canalha
+Vou aparecer na sua casa e voce vai ver so,ameaca,
+"Que praga, derramei cafe no teclado",palavrao,praga
+Voce so faz merda desde que entrou aqui,insulto,
+Ela e uma d3$gr4(4d4 completa,insulto,d3$gr4(4d4
+"No fim das contas, as aulas de violao esta comecando esse ano",normal,
+O concerto de ontem esta emocionante,normal,
+"Que maldito, o voo foi cancelado em cima da hora",palavrao,maldito
+Voce e uma 4rr0mbada,insulto,4rr0mbada
+So pode ser patetico pra fazer isso,insulto,patetico
+Inferno... esqueci o carregador em casa,palavrao,inferno
+"Peste, travou o computador de novo",palavrao,peste
+So pode ser ridicula pra fazer isso,insulto,ridicula
+"Puts, que inferno, furou o pneu no meio do caminho",palavrao,inferno
+"Porra, o onibus passou direto sem parar",palavrao,porra
+Voce e uma nojenta,insulto,nojenta
+"Capeta, perdi o prazo da entrega",palavrao,capeta
+"Voce e muito escrota, sabia?",insulto,escrota
+"Que pessoa infeliz, nao acredito",insulto,infeliz
+"Que peste, derramei cafe no teclado",palavrao,peste
+O curso online esta bem interessante,normal,
+"Que cacete, choveu bem na hora que eu ia sair",palavrao,cacete
+"No fim das contas, a viagem de feriado esta planejada pra visitar a familia",normal,
+Ninguem aguenta voce,insulto,
+Voce vai desejar nao ter mexido comigo,ameaca,
+"Puts, que cacete, chegou atrasado de novo",palavrao,cacete
+Inferno... furou o pneu no meio do caminho,palavrao,inferno
+A exposicao no museu esta fascinante,normal,
+"Pra falar a verdade, a trilha do fim de semana esta incrivel",normal,
+"M4ld1to, furou o pneu no meio do caminho",palavrao,m4ld1to
+"Puts, que caralho, chegou atrasado de novo",palavrao,caralho
+"Essa semana, a vaga de estagio esta conseguida essa semana",normal,
+"Voce e muito n0j3nt0, sabia?",insulto,n0j3nt0
+Voce e um safado,insulto,safado
+"Sinceramente, o time da faculdade esta bem no torneio",normal,
+"Cacete, chegou atrasado de novo",palavrao,cacete
+Nao pense que isso vai ficar assim,ameaca,
+"Inferno, a internet caiu de novo",palavrao,inferno
+"Puts, que foda-se, perdi o prazo da entrega",palavrao,foda-se
+"Voce e muito covarde, sabia?",insulto,covarde
+"Inferno, esqueci o carregador em casa",palavrao,inferno
+"Pra falar a verdade, a corrida no parque esta otima pela manha",normal,
+"Ontem percebi que o restaurante novo esta otimo, vamos almocar la",normal,
+"Puts, que merda, o wifi cortou no meio da call",palavrao,merda
+"Nao adianta se esconder, eu vou te achar",ameaca,
+"No fim das contas, a receita nova esta tentada hoje na cozinha",normal,
+"Que puta merda, caiu a energia no meio do jogo",palavrao,puta merda
+"Voce e muito 1d10t4, sabia?",insulto,1d10t4
+"O show de ontem esta incrivel, muita energia",normal,
+"No fim das contas, o novo album da banda esta muito bom",normal,
