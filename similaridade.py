@@ -25,6 +25,17 @@ TABELA_NORMALIZACAO = str.maketrans({
 PALAVRAS_PERMITIDAS = {
     "sabado", 
     "bota",
+    "poder",
+    "feliz",
+    "útil",
+    "corpo",
+    "acabar",
+    "perda",
+    "muro",
+    "feder",
+    "idioma",
+    "abacate",
+    "abacaxi",
 }
 
 
