@@ -1,16 +1,23 @@
 """
-Utilitarios compartilhados para geracao e cache de embeddings de sentenca.
+Utilitarios compartilhados para geracao e cache de vetores de significado.
 
-Usado pelo classificador semantico (classificador_semantico.py), pela
-descoberta de novos termos (descobrir_termos.py) e pela deteccao de
-quase-duplicatas (src/validar_dados.py) - qualquer rotina que precise
-comparar mensagens por SIGNIFICADO, e nao so por caractere.
+Antes usava sentence-transformers (modelo de linguagem pre-treinado, ~470MB,
+precisa baixar da internet e depende de torch). Trocado por TF-IDF do
+scikit-learn: nao baixa nada, nao precisa de torch, e usa uma biblioteca que
+ja era dependencia do projeto.
 
-Modelo escolhido: paraphrase-multilingual-MiniLM-L12-v2 (sentence-transformers).
-E multilingue (cobre portugues), roda em CPU sem problema e tem download
-pequeno (~470MB) comparado a modelos maiores. Na primeira execucao ele e
-baixado automaticamente do Hugging Face Hub e fica em cache local do proprio
-sentence-transformers (~/.cache/huggingface) - depois disso roda offline.
+Trade-off importante: TF-IDF mede semelhanca de VOCABULARIO (quantas
+palavras/expressoes as duas mensagens tem em comum, ponderadas pela
+raridade de cada uma). Ele nao entende sinonimos "de verdade" como um
+modelo de linguagem entenderia - "vá se lascar" e "vá se foder" só vão
+ficar proximos se o dataset de treino tiver exemplos que compartilhem
+vocabulario parecido. E um meio-termo mais leve entre o Jaccard (so
+grafia, sem noção de significado) e um modelo de linguagem completo (mais
+caro em memoria/rede).
+
+Usado pelo classificador semantico (classificador_semantico.py) e por
+qualquer rotina futura que precise comparar mensagens por significado
+aproximado, e nao so por caractere (ver similaridade.py para isso).
 """
 
 from __future__ import annotations
@@ -18,47 +25,54 @@ from __future__ import annotations
 import hashlib
 from pathlib import Path
 
+import joblib
 import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
 
-NOME_MODELO = "paraphrase-multilingual-MiniLM-L12-v2"
 DIRETORIO_CACHE = Path(__file__).with_name("dados") / "cache"
 
-_modelo = None  # singleton carregado sob demanda
+# Vetorizador ajustado (fit) uma unica vez, no dataset rotulado. Sem ele,
+# nao da pra vetorizar uma mensagem nova: o TF-IDF depende do vocabulario
+# aprendido no ajuste inicial pra saber quais palavras existem e o quao
+# raras elas sao.
+_vetorizador: TfidfVectorizer | None = None
 
 
-def carregar_modelo():
-    """Carrega o modelo de embeddings uma unica vez por processo.
+def _criar_vetorizador() -> TfidfVectorizer:
+    return TfidfVectorizer(
+        lowercase=True,
+        strip_accents="unicode",
+        ngram_range=(1, 2),  # unigramas + bigramas: pega tambem expressoes curtas
+        min_df=1,
+    )
 
-    O import do sentence-transformers fica dentro da funcao (nao no topo do
-    arquivo) de proposito: scripts que so usam a regex ou o Jaccard
-    (moderador.py, similaridade.py) nao devem pagar o custo de carregar
-    torch/transformers se a camada semantica nunca for chamada.
-    """
-    global _modelo
 
-    if _modelo is None:
-        from sentence_transformers import SentenceTransformer
-
-        _modelo = SentenceTransformer(NOME_MODELO)
-
-    return _modelo
+def _normalizar(matriz_esparsa) -> np.ndarray:
+    """Deixa cada vetor com norma 1 (mesmo papel do normalize_embeddings de
+    antes), pra comparar por produto escalar em vez de cosseno completo."""
+    matriz_densa = np.asarray(matriz_esparsa.todense(), dtype=np.float32)
+    normas = np.linalg.norm(matriz_densa, axis=1, keepdims=True)
+    normas[normas == 0] = 1.0  # evita divisao por zero (mensagem vazia/so ruido)
+    return matriz_densa / normas
 
 
 def gerar_embeddings(textos: list[str]) -> np.ndarray:
-    """Converte uma lista de mensagens em vetores de significado.
+    """Converte mensagens em vetores TF-IDF, usando o vocabulario ja
+    ajustado no dataset rotulado.
 
-    normalize_embeddings=True deixa cada vetor com norma 1, o que permite
-    usar produto escalar (mais rapido) no lugar de similaridade de cosseno
-    completa - os dois resultados sao equivalentes quando os vetores sao
-    normalizados.
+    Precisa que `carregar_ou_gerar_embeddings` tenha rodado antes pelo
+    menos uma vez no processo - e o que ajusta (fit) o vetorizador. O
+    classificador semantico sempre faz isso primeiro (carrega o dataset
+    antes de classificar qualquer mensagem nova).
     """
-    modelo = carregar_modelo()
-    vetores = modelo.encode(
-        textos,
-        normalize_embeddings=True,
-        show_progress_bar=False,
-    )
-    return np.asarray(vetores, dtype=np.float32)
+    if _vetorizador is None:
+        raise RuntimeError(
+            "Vetorizador TF-IDF ainda nao foi ajustado. Chame "
+            "carregar_ou_gerar_embeddings() com o dataset rotulado antes."
+        )
+
+    vetores = _vetorizador.transform(textos)
+    return _normalizar(vetores)
 
 
 def _hash_conteudo(caminho: Path) -> str:
@@ -69,7 +83,7 @@ def _hash_conteudo(caminho: Path) -> str:
 
 def _caminho_cache(nome_base: str, hash_dados: str) -> Path:
     DIRETORIO_CACHE.mkdir(parents=True, exist_ok=True)
-    return DIRETORIO_CACHE / f"{nome_base}_{hash_dados}.npz"
+    return DIRETORIO_CACHE / f"{nome_base}_{hash_dados}.joblib"
 
 
 def carregar_ou_gerar_embeddings(
@@ -77,19 +91,23 @@ def carregar_ou_gerar_embeddings(
     caminho_fonte: Path,
     textos: list[str],
 ) -> np.ndarray:
-    """Gera embeddings para `textos` ou reaproveita o cache em disco.
-
-    Gerar embedding para ~600 mensagens e barato, mas nao ha motivo pra
-    recalcular a cada chamada de API: o cache e valido enquanto o conteudo
-    de `caminho_fonte` (o CSV) nao mudar. Se o CSV mudar, o hash muda, um
-    novo arquivo de cache e criado e os embeddings sao recalculados.
+    """Ajusta (fit) o vetorizador TF-IDF no dataset e gera os vetores, ou
+    reaproveita o cache em disco se o conteudo de `caminho_fonte` nao
+    mudou desde a ultima vez (mesma logica de antes, so troca o formato
+    salvo - agora e o vetorizador inteiro, via joblib, nao so os numeros).
     """
+    global _vetorizador
+
     hash_dados = _hash_conteudo(caminho_fonte)
     caminho = _caminho_cache(nome_base, hash_dados)
 
     if caminho.exists():
-        return np.load(caminho)["embeddings"]
+        _vetorizador, vetores = joblib.load(caminho)
+        return vetores
 
-    embeddings = gerar_embeddings(textos)
-    np.savez_compressed(caminho, embeddings=embeddings)
-    return embeddings
+    _vetorizador = _criar_vetorizador()
+    matriz_esparsa = _vetorizador.fit_transform(textos)
+    vetores = _normalizar(matriz_esparsa)
+
+    joblib.dump((_vetorizador, vetores), caminho)
+    return vetores
