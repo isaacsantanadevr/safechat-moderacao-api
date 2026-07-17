@@ -26,7 +26,6 @@ o que ja esta cadastrado.
 
 from __future__ import annotations
 
-from collections import Counter
 from pathlib import Path
 
 import numpy as np
@@ -38,7 +37,8 @@ CAMINHO_DATASET = (Path(__file__)).with_name("dados") / "brutos" / "mensagens.cs
 NOME_CACHE_DATASET = "mensagens_rotuladas"
 
 K_VIZINHOS = 5
-LIMIAR_CONFIANCA = 0.6  # fracao minima dos k vizinhos que precisa concordar
+LIMIAR_CONFIANCA = 0.6  # fracao minima do peso (por similaridade) que precisa concordar
+LIMIAR_SIMILARIDADE_MINIMA = 0.45  # abaixo disso, nenhum vizinho e parecido o suficiente pra confiar
 CATEGORIA_SEGURA = "normal"
 
 MENSAGEM_BLOQUEADA = (
@@ -73,12 +73,25 @@ def classificar_por_similaridade(
     mensagem: str,
     k: int = K_VIZINHOS,
     limiar_confianca: float = LIMIAR_CONFIANCA,
+    limiar_similaridade_minima: float = LIMIAR_SIMILARIDADE_MINIMA,
 ) -> tuple[str, float, list[tuple[str, str, float]]]:
     """Classifica `mensagem` comparando-a com o dataset rotulado.
 
     Retorna (categoria_prevista, confianca, vizinhos). `vizinhos` e a lista
     dos k exemplos mais proximos (mensagem, categoria, similaridade) - util
     para depuracao e para explicar por que uma mensagem foi ou nao sinalizada.
+
+    Duas travas de seguranca, alem do voto em si:
+    1. Similaridade minima: se nem o vizinho mais parecido passar de
+       `limiar_similaridade_minima`, a mensagem nao tem nenhum vizinho
+       realmente parecido - os k mais proximos podem ser so "os menos
+       diferentes" entre um monte de mensagens sem nada a ver. Nesse caso
+       nem tenta votar, ja volta como segura.
+    2. Voto ponderado pela similaridade (nao voto por contagem simples):
+       um vizinho quase identico (similaridade 1.0) pesa muito mais que
+       varios vizinhos fracos (similaridade 0.1) - sem isso, uma
+       correspondencia forte pode ser "atropelada" numericamente por um
+       bando de vizinhos bem mais fracos que por acaso concordam entre si.
     """
     dataset = _carregar_dataset()
     vetor = gerar_embeddings([mensagem])[0]
@@ -87,15 +100,25 @@ def classificar_por_similaridade(
     similaridades = dataset["embeddings"] @ vetor
     indices_top_k = np.argsort(-similaridades)[:k]
 
-    categorias_vizinhas = dataset["categorias"][indices_top_k]
-    contagem = Counter(categorias_vizinhas)
-    categoria_prevista, votos = contagem.most_common(1)[0]
-    confianca = votos / k
-
     vizinhos = [
         (dataset["mensagens"][i], dataset["categorias"][i], float(similaridades[i]))
         for i in indices_top_k
     ]
+
+    maior_similaridade = vizinhos[0][2] if vizinhos else 0.0
+
+    if maior_similaridade < limiar_similaridade_minima:
+        return CATEGORIA_SEGURA, 0.0, vizinhos
+
+    peso_por_categoria: dict[str, float] = {}
+    for _, categoria, similaridade in vizinhos:
+        peso_por_categoria[categoria] = (
+            peso_por_categoria.get(categoria, 0.0) + max(similaridade, 0.0)
+        )
+
+    categoria_prevista = max(peso_por_categoria, key=peso_por_categoria.get)
+    peso_total = sum(peso_por_categoria.values())
+    confianca = peso_por_categoria[categoria_prevista] / peso_total if peso_total > 0 else 0.0
 
     if confianca < limiar_confianca:
         return CATEGORIA_SEGURA, confianca, vizinhos
