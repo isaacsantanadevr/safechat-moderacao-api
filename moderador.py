@@ -2,6 +2,7 @@ from pathlib import Path
 import re
 
 from similaridade import censurar_variacoes, mascarar_trecho
+from classificador_semantico import censurar_semantico
 
 ARQUIVO_TERMOS = (Path(__file__)).with_name("palavras_proibidas.txt")
 
@@ -31,6 +32,15 @@ def censurar_mensagem(mensagem: str) -> str:
         mensagem_censurada = censurar_variacoes(mensagem_censurada, termos_proibidos)
     except Exception:
         pass
+
+    # Camada 3 (semantica) so roda se as camadas 1 e 2 nao sinalizaram nada -
+    # e uma rede de seguranca adicional para ofensas sem termo literal, nao
+    # uma substituta das camadas mais baratas e precisas acima.
+    if mensagem_censurada == mensagem:
+        try:
+            mensagem_censurada = censurar_semantico(mensagem_censurada)
+        except Exception:
+            pass
 
     return mensagem_censurada
 
