@@ -155,7 +155,7 @@ _PADRAO_SOLETRADO = re.compile(
 
 
 # Troque para False pra voltar ao modo tradicional de asteriscos (ex: apresentacao).
-MODO_MOB_MINECRAFT = True
+MODO_MOB_MINECRAFT = False
 
 NOMES_DE_MOBS = [
     "creeper", "zumbi", "esqueleto", "aranha", "enderman", "bruxa",
