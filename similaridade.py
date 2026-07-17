@@ -10,6 +10,7 @@ Esta camada roda DEPOIS da regex, apenas sobre as palavras que sobraram sem
 ser censuradas. Nao substitui a correspondencia exata, so complementa.
 """
 
+import random
 import re
 import unicodedata
 
@@ -152,7 +153,30 @@ _PADRAO_SOLETRADO = re.compile(
 )
 
 
+# Troque para False pra voltar ao modo tradicional de asteriscos (ex: apresentacao).
+MODO_MOB_MINECRAFT = True
+
+NOMES_DE_MOBS = [
+    "creeper", "zumbi", "esqueleto", "aranha", "enderman", "bruxa",
+    "blaze", "steve", "slime", "wither", "piglin", "aldeao",
+    "golem de ferro", "warden",
+]
+
+
+def _ajustar_caixa(texto: str, original: str) -> str:
+    """Tenta imitar o padrao de maiusculas do trecho original, pra ficar
+    mais natural (ex: 'IDIOTA' -> 'CREEPER', 'Idiota' -> 'Creeper')."""
+    if original.isupper():
+        return texto.upper()
+    if original[:1].isupper():
+        return texto.capitalize()
+    return texto
+
+
 def mascarar_trecho(trecho: str) -> str:
+    if MODO_MOB_MINECRAFT and any(c.isalnum() for c in trecho):
+        mob = random.choice(NOMES_DE_MOBS)
+        return _ajustar_caixa(mob, trecho)
     return "".join("*" if c.isalnum() else c for c in trecho)
 
 

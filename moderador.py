@@ -1,7 +1,7 @@
 from pathlib import Path
 import re
 
-from similaridade import censurar_variacoes
+from similaridade import censurar_variacoes, mascarar_trecho
 
 ARQUIVO_TERMOS = (Path(__file__)).with_name("palavras_proibidas.txt")
 
@@ -17,11 +17,6 @@ def criar_padrao(termos: list[str]) -> re.Pattern:
     return re.compile(
         r"(?<!\w)(?:" + "|".join(termos_regex) + r")(?!\w)",
         flags=re.IGNORECASE
-    )
-
-def mascarar_trecho(trecho: str) -> str:
-    return "".join(
-        "*"if caractere.isalnum() else caractere for caractere in trecho
     )
 
 termos_proibidos = cargar_termos_proibidos()
