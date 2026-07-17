@@ -45,6 +45,7 @@ PALAVRAS_PERMITIDAS = {
     "berro",
     "feder",
     "infernal",
+    "porta",
 }
 
 
@@ -159,7 +160,7 @@ MODO_MOB_MINECRAFT = True
 NOMES_DE_MOBS = [
     "creeper", "zumbi", "esqueleto", "aranha", "enderman", "bruxa",
     "blaze", "steve", "slime", "wither", "piglin", "aldeao",
-    "golem de ferro", "warden",
+    "golem de ferro", "warden", "ghast", "herobrine",
 ]
 
 
