@@ -23,19 +23,25 @@ TABELA_NORMALIZACAO = str.maketrans({
 })
 
 PALAVRAS_PERMITIDAS = {
-    "sabado", 
+    "sabado",
     "bota",
     "poder",
     "feliz",
     "útil",
+    "verde",
     "corpo",
     "acabar",
     "perda",
-    "muro",
-    "feder",
-    "idioma",
     "abacate",
     "abacaxi",
+    "forno",
+    "idioma",
+    "baralho",
+    "carvalho",
+    "trair",
+    "murro",
+    "berro",
+    "feder",
 }
 
 
@@ -126,7 +132,11 @@ def token_e_suspeito(
 
 
 _PADRAO_TOKEN = re.compile(r"\w+", flags=re.UNICODE)
-_PADRAO_SOLETRADO = re.compile(r"\w(?:[.\-*]\w){3,}", flags=re.UNICODE)
+
+_SEPARADORES_SOLETRADO = r"[.\-*_,:;|/\\\s]"
+_PADRAO_SOLETRADO = re.compile(
+    rf"\w(?:{_SEPARADORES_SOLETRADO}+\w){{3,}}", flags=re.UNICODE
+)
 
 
 def mascarar_trecho(trecho: str) -> str:
@@ -150,7 +160,7 @@ def censurar_variacoes(mensagem: str, termos_proibidos: list[str]) -> str:
 
     def substituir_soletrado(m: re.Match) -> str:
         trecho = m.group()
-        candidato = re.sub(r"[.\-*]", "", trecho)
+        candidato = re.sub(_SEPARADORES_SOLETRADO, "", trecho)
         if token_e_suspeito(candidato, termos_simples):
             return mascarar_trecho(trecho)
         return trecho
