@@ -1,6 +1,8 @@
 from pathlib import Path
 import re
 
+from similaridade import censurar_variacoes
+
 ARQUIVO_TERMOS = (Path(__file__)).with_name("palavras_proibidas.txt")
 
 def cargar_termos_proibidos() -> list[str]:
@@ -26,7 +28,16 @@ termos_proibidos = cargar_termos_proibidos()
 padrao_proibido = criar_padrao(termos_proibidos)
 
 def censurar_mensagem(mensagem: str) -> str:
-    return padrao_proibido.sub(lambda resultado: mascarar_trecho(resultado.group()), mensagem)
+    mensagem_censurada = padrao_proibido.sub(
+        lambda resultado: mascarar_trecho(resultado.group()), mensagem
+    )
+
+    try:
+        mensagem_censurada = censurar_variacoes(mensagem_censurada, termos_proibidos)
+    except Exception:
+        pass
+
+    return mensagem_censurada
 
 if __name__ == "__main__":
     mensagem = input("Digite uma mensagem: ")
