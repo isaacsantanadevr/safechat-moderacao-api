@@ -27,7 +27,7 @@ import pandas as pd
 from sklearn.cluster import KMeans
 
 from embeddings_utils import carregar_ou_gerar_embeddings
-from moderador import cargar_termos_proibidos
+from moderador import carregar_termos_proibidos
 
 CAMINHO_DATASET = (Path(__file__)).with_name("dados") / "brutos" / "mensagens.csv"
 CATEGORIAS_OFENSIVAS = {"palavrao", "insulto", "ameaca"}
@@ -77,7 +77,7 @@ def descobrir_termos_candidatos(
     kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
     rotulos_cluster = kmeans.fit_predict(embeddings)
 
-    termos_conhecidos = set(cargar_termos_proibidos())
+    termos_conhecidos = set(carregar_termos_proibidos())
 
     resultado: dict[int, list[tuple[str, int]]] = {}
     for cluster_id in range(n_clusters):

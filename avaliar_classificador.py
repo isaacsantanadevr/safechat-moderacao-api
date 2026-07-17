@@ -25,9 +25,7 @@ import matplotlib
 
 matplotlib.use("Agg")  # gera a imagem sem precisar de tela grafica
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import ConfusionMatrixDisplay, classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
 
@@ -37,6 +35,8 @@ from classificador_semantico import (
     LIMIAR_CONFIANCA,
     LIMIAR_SIMILARIDADE_MINIMA,
     _classificar_vetor,
+    _criar_vetorizador_tfidf,
+    _selecionar_exemplos_sem_termo_explicito,
 )
 
 CAMINHO_DATASET = Path(__file__).with_name("dados") / "brutos" / "mensagens.csv"
@@ -44,33 +44,22 @@ CAMINHO_SAIDA_GRAFICO = Path(__file__).with_name("matriz_confusao.png")
 
 PROPORCAO_TESTE = 0.2
 SEMENTE_ALEATORIA = 42
-CATEGORIAS_EM_ORDEM = ["normal", "palavrao", "insulto", "ameaca"]
-
-
-def _normalizar(matriz_esparsa) -> np.ndarray:
-    """Mesma normalizacao usada em embeddings_utils.py (norma 1 por vetor,
-    pra comparar por produto escalar em vez de cosseno completo)."""
-    matriz_densa = np.asarray(matriz_esparsa.todense(), dtype=np.float32)
-    normas = np.linalg.norm(matriz_densa, axis=1, keepdims=True)
-    normas[normas == 0] = 1.0
-    return matriz_densa / normas
+CATEGORIAS_EM_ORDEM = ["normal", "insulto", "ameaca"]
 
 
 def vetorizar_tfidf(textos_treino: list[str], textos_teste: list[str]):
-    """Ajusta um TF-IDF novo, so no treino, e usa o mesmo vocabulario pra
-    transformar o teste. Mesma configuracao do embeddings_utils.py atual -
-    trocar essa funcao por uma versao Word2Vec/GloVe no futuro e o unico
-    passo necessario pra reaproveitar todo o resto deste script."""
-    vetorizador = TfidfVectorizer(
-        lowercase=True, strip_accents="unicode", ngram_range=(1, 2), min_df=1
-    )
-    vetores_treino = _normalizar(vetorizador.fit_transform(textos_treino))
-    vetores_teste = _normalizar(vetorizador.transform(textos_teste))
+    """Ajusta no treino o mesmo vetorizador usado pela API de produção."""
+    vetorizador = _criar_vetorizador_tfidf()
+    vetores_treino = vetorizador.fit_transform(textos_treino)
+    vetores_teste = vetorizador.transform(textos_teste)
     return vetores_treino, vetores_teste
 
 
 def avaliar(nome_metodo: str, funcao_vetorizacao) -> None:
     df = pd.read_csv(CAMINHO_DATASET)
+    # A terceira camada não recebe exemplos que já contêm um termo explícito;
+    # a avaliação deve medir exatamente o mesmo problema resolvido pela API.
+    df = _selecionar_exemplos_sem_termo_explicito(df)
 
     treino, teste = train_test_split(
         df,

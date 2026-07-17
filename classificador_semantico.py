@@ -1,27 +1,18 @@
-"""
-Camada de classificacao semantica por embeddings (k-NN).
+"""Camada de classificação textual com embeddings TF-IDF e k-NN.
 
-Complementa moderador.py (correspondencia exata via regex) e similaridade.py
-(Jaccard de bigramas + distancia de edicao sobre grafia): aquelas camadas
-pegam VARIACOES de palavras ja cadastradas em palavras_proibidas.txt. Esta
-camada pega mensagens ofensivas que nao usam nenhum termo da lista, mas cujo
-SIGNIFICADO e proximo o suficiente de exemplos ja rotulados no dataset
-(dados/brutos/mensagens.csv) - insultos com sinonimos, ameacas indiretas,
-paranoia diferente da usada nos termos cadastrados.
+As duas primeiras camadas do moderador tratam termos conhecidos: a lista de
+palavras (Bag of Words) encontra correspondências exatas e o Jaccard encontra
+variações de grafia. Esta terceira camada compara a mensagem inteira com os
+exemplos rotulados em ``dados/brutos/mensagens.csv``.
 
-Abordagem (k-NN sobre embeddings de sentenca):
-  1. As mensagens rotuladas do dataset sao convertidas em vetores que
-     capturam significado (embeddings_utils.py cuida da geracao/cache).
-  2. A mensagem recebida e convertida no mesmo espaco vetorial.
-  3. Comparamos por similaridade de cosseno com o dataset inteiro e pegamos
-     os K vizinhos mais proximos - eles "votam" numa categoria.
-  4. Se a categoria vencedora nao for "normal" e o voto for majoritario o
-     suficiente (LIMIAR_CONFIANCA), a mensagem e sinalizada.
+O TF-IDF transforma textos em vetores esparsos sem exigir download de modelo
+nem inferência neural. São combinados n-gramas de palavras, para reconhecer
+expressões, e n-gramas de caracteres, para tolerar variações de escrita. O
+vetorizador é ajustado no primeiro uso e permanece em memória.
 
-Esta camada so roda quando a regex e o Jaccard NAO sinalizaram nada (ver
-integracao em moderador.py) - e uma rede de seguranca adicional, nunca
-substitui as camadas anteriores, que sao mais baratas e mais precisas para
-o que ja esta cadastrado.
+O k-NN usa similaridade de cosseno. Cada vizinho vota com peso proporcional à
+similaridade, e um limiar conservador impede decisões baseadas apenas em
+palavras comuns de mensagens sem relação suficiente com o dataset.
 """
 
 from __future__ import annotations
@@ -30,71 +21,137 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.pipeline import FeatureUnion, Pipeline
+from sklearn.preprocessing import Normalizer
 
-from embeddings_utils import carregar_ou_gerar_embeddings, gerar_embeddings
-
-CAMINHO_DATASET = (Path(__file__)).with_name("dados") / "brutos" / "mensagens.csv"
-NOME_CACHE_DATASET = "mensagens_rotuladas"
+CAMINHO_DATASET = Path(__file__).with_name("dados") / "brutos" / "mensagens.csv"
 
 K_VIZINHOS = 5
-LIMIAR_CONFIANCA = 0.6  # fracao minima do peso (por similaridade) que precisa concordar
-LIMIAR_SIMILARIDADE_MINIMA = 0.45  # abaixo disso, nenhum vizinho e parecido o suficiente pra confiar
+LIMIAR_CONFIANCA = 0.55
+
+# TF-IDF mede proximidade lexical, não compreensão profunda. Um limiar alto
+# faz esta camada falhar de forma segura: só bloqueia textos realmente próximos
+# dos exemplos ofensivos, em vez de adivinhar com base em palavras comuns.
+LIMIAR_SIMILARIDADE_MINIMA = 0.60
+
+# Alias mantido para compatibilidade com chamadas e testes anteriores.
+LIMIAR_SIMILARIDADE = LIMIAR_SIMILARIDADE_MINIMA
 CATEGORIA_SEGURA = "normal"
 
 MENSAGEM_BLOQUEADA = (
     "[mensagem removida pela moderacao - conteudo sinalizado por analise semantica]"
 )
 
-_dataset_cache: dict | None = None
+_classificador_cache: dict | None = None
 
 
-def _carregar_dataset() -> dict:
-    """Carrega (e mantem em memoria) os embeddings + categorias do dataset
-    rotulado. So roda a leitura/geracao uma vez por processo."""
-    global _dataset_cache
-
-    if _dataset_cache is not None:
-        return _dataset_cache
-
-    df = pd.read_csv(CAMINHO_DATASET)
-    embeddings = carregar_ou_gerar_embeddings(
-        NOME_CACHE_DATASET, CAMINHO_DATASET, df["mensagem"].tolist()
+def _criar_vetorizador_tfidf() -> Pipeline:
+    """Cria a mesma representação TF-IDF para produção e avaliação."""
+    atributos = FeatureUnion(
+        [
+            (
+                "palavras",
+                TfidfVectorizer(
+                    lowercase=True,
+                    strip_accents="unicode",
+                    ngram_range=(1, 2),
+                    sublinear_tf=True,
+                ),
+            ),
+            (
+                "caracteres",
+                TfidfVectorizer(
+                    lowercase=True,
+                    strip_accents="unicode",
+                    analyzer="char_wb",
+                    ngram_range=(3, 5),
+                    min_df=2,
+                    sublinear_tf=True,
+                ),
+            ),
+        ]
+    )
+    return Pipeline(
+        [
+            ("atributos", atributos),
+            ("normalizar", Normalizer(copy=False)),
+        ]
     )
 
-    _dataset_cache = {
+
+def _selecionar_exemplos_sem_termo_explicito(dados: pd.DataFrame) -> pd.DataFrame:
+    """Seleciona somente exemplos que realmente chegam à terceira camada.
+
+    Mensagens com ``termos_ofensivos`` preenchido já são responsabilidade do
+    Bag of Words e do Jaccard. Incluí-las faria o TF-IDF associar contextos
+    neutros, como "perdi o ônibus", ao palavrão que aparece junto no exemplo.
+    """
+    sem_termo_explicito = (
+        dados["termos_ofensivos"].fillna("").astype(str).str.strip().eq("")
+    )
+    return dados[sem_termo_explicito].reset_index(drop=True)
+
+
+def _carregar_classificador() -> dict:
+    """Ajusta o TF-IDF uma única vez e mantém os dados em memória."""
+    global _classificador_cache
+
+    if _classificador_cache is not None:
+        return _classificador_cache
+
+    dados = pd.read_csv(CAMINHO_DATASET)
+    dados = _selecionar_exemplos_sem_termo_explicito(dados)
+    mensagens = dados["mensagem"].astype(str).tolist()
+    vetorizador = _criar_vetorizador_tfidf()
+    embeddings = vetorizador.fit_transform(mensagens)
+
+    _classificador_cache = {
+        "vetorizador": vetorizador,
         "embeddings": embeddings,
-        "categorias": df["categoria"].to_numpy(),
-        "mensagens": df["mensagem"].tolist(),
+        "categorias": dados["categoria"].to_numpy(),
+        "mensagens": mensagens,
     }
-    return _dataset_cache
+    return _classificador_cache
+
+
+def _calcular_similaridades(vetor, embeddings_referencia) -> np.ndarray:
+    """Calcula cossenos aceitando matrizes esparsas ou arrays densos."""
+    if hasattr(vetor, "toarray"):
+        resultado = embeddings_referencia @ vetor.T
+    else:
+        resultado = embeddings_referencia @ np.asarray(vetor).reshape(-1)
+
+    if hasattr(resultado, "toarray"):
+        resultado = resultado.toarray()
+    return np.asarray(resultado).ravel()
 
 
 def _classificar_vetor(
-    vetor: np.ndarray,
-    embeddings_referencia: np.ndarray,
+    vetor,
+    embeddings_referencia,
     categorias_referencia: np.ndarray,
     k: int,
     limiar_confianca: float,
     limiar_similaridade_minima: float,
 ) -> tuple[str, float, list[tuple[int, float]]]:
-    """Nucleo do k-NN ponderado, separado do dataset de producao pra poder
-    ser reaproveitado tambem na avaliacao formal (treino/teste), onde o
-    "conjunto de referencia" e so a parte de treino, nao o dataset inteiro.
+    """Executa o k-NN ponderado para produção e avaliação treino/teste."""
+    if k < 1:
+        raise ValueError("k deve ser maior que zero.")
+    if len(categorias_referencia) == 0:
+        return CATEGORIA_SEGURA, 0.0, []
 
-    Retorna (categoria_prevista, confianca, [(indice, similaridade), ...]).
-    """
-    similaridades = embeddings_referencia @ vetor
-    indices_top_k = np.argsort(-similaridades)[:k]
+    similaridades = _calcular_similaridades(vetor, embeddings_referencia)
+    k_utilizado = min(k, len(categorias_referencia))
+    indices_top_k = np.argsort(-similaridades)[:k_utilizado]
+    vizinhos = [(int(i), float(similaridades[i])) for i in indices_top_k]
 
-    vizinhos_idx_sim = [(int(i), float(similaridades[i])) for i in indices_top_k]
-
-    maior_similaridade = vizinhos_idx_sim[0][1] if vizinhos_idx_sim else 0.0
-
+    maior_similaridade = vizinhos[0][1] if vizinhos else 0.0
     if maior_similaridade < limiar_similaridade_minima:
-        return CATEGORIA_SEGURA, 0.0, vizinhos_idx_sim
+        return CATEGORIA_SEGURA, 0.0, vizinhos
 
     peso_por_categoria: dict[str, float] = {}
-    for indice, similaridade in vizinhos_idx_sim:
+    for indice, similaridade in vizinhos:
         categoria = categorias_referencia[indice]
         peso_por_categoria[categoria] = (
             peso_por_categoria.get(categoria, 0.0) + max(similaridade, 0.0)
@@ -102,12 +159,15 @@ def _classificar_vetor(
 
     categoria_prevista = max(peso_por_categoria, key=peso_por_categoria.get)
     peso_total = sum(peso_por_categoria.values())
-    confianca = peso_por_categoria[categoria_prevista] / peso_total if peso_total > 0 else 0.0
+    confianca = (
+        peso_por_categoria[categoria_prevista] / peso_total
+        if peso_total > 0
+        else 0.0
+    )
 
     if confianca < limiar_confianca:
-        return CATEGORIA_SEGURA, confianca, vizinhos_idx_sim
-
-    return categoria_prevista, confianca, vizinhos_idx_sim
+        return CATEGORIA_SEGURA, confianca, vizinhos
+    return categoria_prevista, confianca, vizinhos
 
 
 def classificar_por_similaridade(
@@ -116,59 +176,39 @@ def classificar_por_similaridade(
     limiar_confianca: float = LIMIAR_CONFIANCA,
     limiar_similaridade_minima: float = LIMIAR_SIMILARIDADE_MINIMA,
 ) -> tuple[str, float, list[tuple[str, str, float]]]:
-    """Classifica `mensagem` comparando-a com o dataset rotulado.
+    """Classifica uma mensagem pelos exemplos mais próximos do dataset.
 
-    Retorna (categoria_prevista, confianca, vizinhos). `vizinhos` e a lista
-    dos k exemplos mais proximos (mensagem, categoria, similaridade) - util
-    para depuracao e para explicar por que uma mensagem foi ou nao sinalizada.
-
-    Duas travas de seguranca, alem do voto em si:
-    1. Similaridade minima: se nem o vizinho mais parecido passar de
-       `limiar_similaridade_minima`, a mensagem nao tem nenhum vizinho
-       realmente parecido - os k mais proximos podem ser so "os menos
-       diferentes" entre um monte de mensagens sem nada a ver. Nesse caso
-       nem tenta votar, ja volta como segura.
-    2. Voto ponderado pela similaridade (nao voto por contagem simples):
-       um vizinho quase identico (similaridade 1.0) pesa muito mais que
-       varios vizinhos fracos (similaridade 0.1) - sem isso, uma
-       correspondencia forte pode ser "atropelada" numericamente por um
-       bando de vizinhos bem mais fracos que por acaso concordam entre si.
+    Retorna ``(categoria, confiança, vizinhos)``. A confiança é a parcela da
+    similaridade total que sustenta a categoria vencedora. Cada vizinho contém
+    ``(mensagem, categoria, similaridade)`` para depuração e explicação.
     """
-    dataset = _carregar_dataset()
-    vetor = gerar_embeddings([mensagem])[0]
+    classificador = _carregar_classificador()
+    vetor = classificador["vetorizador"].transform([mensagem])
 
-    categoria_prevista, confianca, vizinhos_idx_sim = _classificar_vetor(
+    categoria, confianca, vizinhos_indices = _classificar_vetor(
         vetor,
-        dataset["embeddings"],
-        dataset["categorias"],
+        classificador["embeddings"],
+        classificador["categorias"],
         k,
         limiar_confianca,
         limiar_similaridade_minima,
     )
-
     vizinhos = [
-        (dataset["mensagens"][i], dataset["categorias"][i], sim)
-        for i, sim in vizinhos_idx_sim
+        (
+            classificador["mensagens"][indice],
+            classificador["categorias"][indice],
+            similaridade,
+        )
+        for indice, similaridade in vizinhos_indices
     ]
-
-    return categoria_prevista, confianca, vizinhos
+    return categoria, confianca, vizinhos
 
 
 def censurar_semantico(mensagem: str) -> str:
-    """Camada 3 de moderacao: se o significado da mensagem for proximo o
-    bastante de exemplos rotulados como palavrao/insulto/ameaca, ela e
-    bloqueada por inteiro.
-
-    Diferente das camadas 1 e 2, aqui nao ha um termo especifico pra
-    mascarar caractere a caractere (a ofensa pode estar espalhada pela frase
-    inteira, sem nenhuma palavra "culpada"), entao a mensagem inteira e
-    substituida por um aviso.
-    """
+    """Bloqueia por inteiro uma mensagem ofensiva identificada pelo TF-IDF."""
     categoria, _confianca, _vizinhos = classificar_por_similaridade(mensagem)
-
     if categoria != CATEGORIA_SEGURA:
         return MENSAGEM_BLOQUEADA
-
     return mensagem
 
 
@@ -176,7 +216,7 @@ if __name__ == "__main__":
     mensagem_usuario = input("Digite uma mensagem: ")
     categoria, confianca, vizinhos = classificar_por_similaridade(mensagem_usuario)
 
-    print(f"\nCategoria prevista: {categoria} (confianca: {confianca:.0%})")
-    print("Vizinhos mais proximos no dataset:")
-    for texto, cat, sim in vizinhos:
-        print(f"  [{cat}] (sim={sim:.2f}) {texto}")
+    print(f"\nCategoria prevista: {categoria} (confiança: {confianca:.0%})")
+    print("Vizinhos mais próximos no dataset:")
+    for texto, categoria_vizinha, similaridade in vizinhos:
+        print(f"  [{categoria_vizinha}] (sim={similaridade:.2f}) {texto}")
