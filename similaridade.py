@@ -11,6 +11,7 @@ ser censuradas. Nao substitui a correspondencia exata, so complementa.
 """
 
 import re
+import unicodedata
 
 N_GRAMA = 2
 LIMIAR_SIMILARIDADE = 0.6
@@ -27,7 +28,7 @@ PALAVRAS_PERMITIDAS = {
     "bota",
     "poder",
     "feliz",
-    "útil",
+    "util",
     "verde",
     "corpo",
     "acabar",
@@ -42,17 +43,28 @@ PALAVRAS_PERMITIDAS = {
     "murro",
     "berro",
     "feder",
+    "infernal",
 }
+
+
+def remover_acentos(texto: str) -> str:
+    """Reduz letras acentuadas a sua forma sem acento (á->a, ç->c, ã->a...)
+    usando a normalizacao Unicode NFKD: ela separa a letra base da marca
+    de acento, e a gente descarta so a marca."""
+    forma_decomposta = unicodedata.normalize("NFKD", texto)
+    return "".join(c for c in forma_decomposta if not unicodedata.combining(c))
 
 
 def limpar_para_comparacao(token: str) -> str:
     """Desfaz truques comuns de disfarce ANTES de comparar (nao altera o
     texto original exibido pro usuario, so a copia usada internamente pra
     decidir se e suspeito):
+    - acentos (á->a, ç->c, ã->a, etc.)
     - leetspeak (0->o, 4->a, 3->e, 1->i, $->s, @->a, (->c)
     - separadores usados no meio da palavra (underscore, asterisco, ponto)
     """
-    token = token.lower().translate(TABELA_NORMALIZACAO)
+    token = remover_acentos(token.lower())
+    token = token.translate(TABELA_NORMALIZACAO)
     token = re.sub(r"[_*.]", "", token)
     return token
 
@@ -123,9 +135,10 @@ def token_e_suspeito(
     grama_token = gerar_ngramas(limpo)
 
     for termo in termos_simples:
-        if similaridade_jaccard(grama_token, gerar_ngramas(termo)) >= limiar_jaccard:
+        termo_limpo = limpar_para_comparacao(termo)
+        if similaridade_jaccard(grama_token, gerar_ngramas(termo_limpo)) >= limiar_jaccard:
             return True
-        if distancia_normalizada(limpo, termo) <= limiar_distancia:
+        if distancia_normalizada(limpo, termo_limpo) <= limiar_distancia:
             return True
 
     return False
