@@ -69,6 +69,47 @@ def _carregar_dataset() -> dict:
     return _dataset_cache
 
 
+def _classificar_vetor(
+    vetor: np.ndarray,
+    embeddings_referencia: np.ndarray,
+    categorias_referencia: np.ndarray,
+    k: int,
+    limiar_confianca: float,
+    limiar_similaridade_minima: float,
+) -> tuple[str, float, list[tuple[int, float]]]:
+    """Nucleo do k-NN ponderado, separado do dataset de producao pra poder
+    ser reaproveitado tambem na avaliacao formal (treino/teste), onde o
+    "conjunto de referencia" e so a parte de treino, nao o dataset inteiro.
+
+    Retorna (categoria_prevista, confianca, [(indice, similaridade), ...]).
+    """
+    similaridades = embeddings_referencia @ vetor
+    indices_top_k = np.argsort(-similaridades)[:k]
+
+    vizinhos_idx_sim = [(int(i), float(similaridades[i])) for i in indices_top_k]
+
+    maior_similaridade = vizinhos_idx_sim[0][1] if vizinhos_idx_sim else 0.0
+
+    if maior_similaridade < limiar_similaridade_minima:
+        return CATEGORIA_SEGURA, 0.0, vizinhos_idx_sim
+
+    peso_por_categoria: dict[str, float] = {}
+    for indice, similaridade in vizinhos_idx_sim:
+        categoria = categorias_referencia[indice]
+        peso_por_categoria[categoria] = (
+            peso_por_categoria.get(categoria, 0.0) + max(similaridade, 0.0)
+        )
+
+    categoria_prevista = max(peso_por_categoria, key=peso_por_categoria.get)
+    peso_total = sum(peso_por_categoria.values())
+    confianca = peso_por_categoria[categoria_prevista] / peso_total if peso_total > 0 else 0.0
+
+    if confianca < limiar_confianca:
+        return CATEGORIA_SEGURA, confianca, vizinhos_idx_sim
+
+    return categoria_prevista, confianca, vizinhos_idx_sim
+
+
 def classificar_por_similaridade(
     mensagem: str,
     k: int = K_VIZINHOS,
@@ -96,32 +137,19 @@ def classificar_por_similaridade(
     dataset = _carregar_dataset()
     vetor = gerar_embeddings([mensagem])[0]
 
-    # vetores normalizados -> produto escalar equivale a similaridade de cosseno
-    similaridades = dataset["embeddings"] @ vetor
-    indices_top_k = np.argsort(-similaridades)[:k]
+    categoria_prevista, confianca, vizinhos_idx_sim = _classificar_vetor(
+        vetor,
+        dataset["embeddings"],
+        dataset["categorias"],
+        k,
+        limiar_confianca,
+        limiar_similaridade_minima,
+    )
 
     vizinhos = [
-        (dataset["mensagens"][i], dataset["categorias"][i], float(similaridades[i]))
-        for i in indices_top_k
+        (dataset["mensagens"][i], dataset["categorias"][i], sim)
+        for i, sim in vizinhos_idx_sim
     ]
-
-    maior_similaridade = vizinhos[0][2] if vizinhos else 0.0
-
-    if maior_similaridade < limiar_similaridade_minima:
-        return CATEGORIA_SEGURA, 0.0, vizinhos
-
-    peso_por_categoria: dict[str, float] = {}
-    for _, categoria, similaridade in vizinhos:
-        peso_por_categoria[categoria] = (
-            peso_por_categoria.get(categoria, 0.0) + max(similaridade, 0.0)
-        )
-
-    categoria_prevista = max(peso_por_categoria, key=peso_por_categoria.get)
-    peso_total = sum(peso_por_categoria.values())
-    confianca = peso_por_categoria[categoria_prevista] / peso_total if peso_total > 0 else 0.0
-
-    if confianca < limiar_confianca:
-        return CATEGORIA_SEGURA, confianca, vizinhos
 
     return categoria_prevista, confianca, vizinhos
 
