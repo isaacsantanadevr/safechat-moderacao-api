@@ -1,0 +1,5 @@
+-r requirements.txt
+
+# Ferramentas executadas fora do fluxo da API:
+# descobrir_termos.py e src/validar_dados.py
+sentence-transformers>=3.0

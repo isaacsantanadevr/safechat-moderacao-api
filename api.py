@@ -21,14 +21,16 @@ class ModerationResponse(BaseModel):
 
 
 @app.get("/health")
-def health() -> dict[str, str]:
+def verificar_saude() -> dict[str, str]:
+    """Informa ao SafeChat que o serviço de moderação está disponível."""
     return {"status": "ok"}
 
 
 @app.post("/moderate", response_model=ModerationResponse)
-def moderate(
+def moderar(
     request: ModerationRequest
 ) -> ModerationResponse:
+    """Recebe o conteúdo do SafeChat e devolve o resultado da moderação."""
     moderated_content = censurar_mensagem(
         request.content
     )
