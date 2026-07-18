@@ -6,7 +6,7 @@ de grafia que nao batem palavra-por-palavra com a lista de termos proibidos
 (leetspeak, letras repetidas, espacamento entre letras, etc.), sem precisar
 cadastrar manualmente cada variacao possivel.
 
-Esta camada roda DEPOIS da regex, apenas sobre as palavras que sobraram sem
+Esta camada roda depos da regex, apenas sobre as palavras que sobraram sem
 ser censuradas. Nao substitui a correspondencia exata, so complementa.
 """
 
@@ -58,7 +58,7 @@ def remover_acentos(texto: str) -> str:
 
 
 def limpar_para_comparacao(token: str) -> str:
-    """Desfaz truques comuns de disfarce ANTES de comparar (nao altera o
+    """Desfaz truques comuns de disfarce antes de comparar (nao altera o
     texto original exibido pro usuario, so a copia usada internamente pra
     decidir se e suspeito):
     - acentos (á->a, ç->c, ã->a, etc.)
@@ -154,7 +154,7 @@ _PADRAO_SOLETRADO = re.compile(
 )
 
 
-# Troque para False pra voltar ao modo tradicional de asteriscos (ex: apresentacao).
+# Para decidir se a censura sera asteriscos ou um mob do Minecraft, basta mudar esta variavel.
 MODO_MOB_MINECRAFT = False
 
 NOMES_DE_MOBS = [

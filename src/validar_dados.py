@@ -41,6 +41,13 @@ def carregar_dados() -> pd.DataFrame:
 
 
 def validar_dados(df: pd.DataFrame) -> None:
+    """Checagem de sanidade do CSV antes de usá-lo como base do classificador.
+
+    Um dataset corrompido ou fora do formato esperado silenciosamente
+    quebraria o classificador_semantico.py lá na frente (colunas erradas,
+    categoria desconhecida, etc.) - melhor falhar aqui, cedo, com uma
+    mensagem clara, do que descobrir depois em produção.
+    """
     colunas_encontradas = set(df.columns)
 
     if colunas_encontradas != COLUNAS_ESPERADAS:
@@ -61,6 +68,8 @@ def validar_dados(df: pd.DataFrame) -> None:
             f"Categorias inválidas: {categorias_invalidas}"
         )
 
+    # Duplicata exata não quebra nada, só é reportada como aviso informativo,
+    # diferente das checagens acima, que travam a execução com raise.
     duplicadas = df["mensagem"].duplicated().sum()
 
     print(f"Total de mensagens: {len(df)}")
@@ -73,8 +82,8 @@ def detectar_quase_duplicatas(
     df: pd.DataFrame,
     limiar: float = 0.92,
 ) -> list[tuple[str, str, float]]:
-    """Alem da duplicata EXATA ja checada em validar_dados (mesma string),
-    acha pares de mensagens PARAFRASEADAS - textos diferentes mas com o
+    """Alem da duplicata exata ja checada em validar_dados (mesma string),
+    acha pares de mensagens parafraseadas - textos diferentes mas com o
     mesmo significado - usando similaridade de cosseno entre embeddings.
 
     Isso importa porque o classificador_semantico.py usa este CSV como base

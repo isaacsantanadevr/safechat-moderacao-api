@@ -1,23 +1,13 @@
 """
 Utilitarios compartilhados para geracao e cache de vetores de significado.
 
-Antes usava sentence-transformers (modelo de linguagem pre-treinado, ~470MB,
-precisa baixar da internet e depende de torch). Trocado por TF-IDF do
-scikit-learn: nao baixa nada, nao precisa de torch, e usa uma biblioteca que
-ja era dependencia do projeto.
-
-Trade-off importante: TF-IDF mede semelhanca de VOCABULARIO (quantas
-palavras/expressoes as duas mensagens tem em comum, ponderadas pela
-raridade de cada uma). Ele nao entende sinonimos "de verdade" como um
-modelo de linguagem entenderia - "vá se lascar" e "vá se foder" só vão
-ficar proximos se o dataset de treino tiver exemplos que compartilhem
-vocabulario parecido. E um meio-termo mais leve entre o Jaccard (so
-grafia, sem noção de significado) e um modelo de linguagem completo (mais
-caro em memoria/rede).
+Gera vetores TF-IDF (scikit-learn) a partir de texto: nao baixa modelo,
+nao depende de torch, so usa uma biblioteca que ja e dependencia do
+projeto.
 
 Usado pelo classificador semantico (classificador_semantico.py) e por
 qualquer rotina futura que precise comparar mensagens por significado
-aproximado, e nao so por caractere (ver similaridade.py para isso).
+aproximado, e nao so por caractere.
 """
 
 from __future__ import annotations

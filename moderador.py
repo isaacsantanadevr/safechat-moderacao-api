@@ -13,6 +13,13 @@ def carregar_termos_proibidos() -> list[str]:
         return [linha.strip() for linha in f if linha.strip()]
 
 def criar_padrao(termos: list[str]) -> re.Pattern:
+    """Monta um regex único com todos os termos proibidos (Bag of Words).
+
+    Ordena do termo mais longo pro mais curto antes de juntar com "|":
+    isso evita que um termo curto "roube" o match de um termo maior que
+    o contém`(?<!\w)...(?!\w)` garante que só bate palavra inteira, não pedaço
+    dentro de outra palavra.
+    """
     termos_ordenados = sorted(termos, key=len, reverse=True)
     termos_regex = [re.escape(termo) for termo in termos_ordenados]
 
@@ -21,14 +28,27 @@ def criar_padrao(termos: list[str]) -> re.Pattern:
         flags=re.IGNORECASE
     )
 
+# Carregado uma vez só, no import do módulo - a lista e o regex ficam
+# prontos em memória pra toda chamada de censurar_mensagem.
 termos_proibidos = carregar_termos_proibidos()
 padrao_proibido = criar_padrao(termos_proibidos)
 
 def censurar_mensagem(mensagem: str) -> str:
+    """Aplica as três camadas de moderação em ordem crescente de custo.
+
+    1) Regex (Bag of Words) - correspondência exata, rápida.
+    2) Jaccard/Levenshtein (similaridade.py) - pega disfarces de grafia.
+    3) TF-IDF/k-NN (classificador_semantico.py) - só roda se as duas
+       primeiras não acharam nada, porque é a mais cara e o objetivo é
+       gastar esse custo só quando realmente precisa.
+    """
     mensagem_censurada = padrao_proibido.sub(
         lambda resultado: mascarar_trecho(resultado.group()), mensagem
     )
 
+    # se a camada de similaridade falhar por
+    # qualquer motivo, a API não deve cair - ela só segue com o texto que já
+    # tinha até então, em vez de devolver erro 500 pro SafeChat.
     try:
         mensagem_censurada = censurar_variacoes(mensagem_censurada, termos_proibidos)
     except Exception:

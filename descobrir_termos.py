@@ -1,20 +1,12 @@
 """
-Ferramenta OFFLINE de analise - roda manualmente (`python descobrir_termos.py`),
+Ferramenta affline de analise - roda manualmente,
 fora do fluxo da API. Nao e chamada pelo moderador.py nem pela api.py.
 
 Agrupa (clusteriza) as mensagens ja rotuladas como palavrao/insulto/ameaca por
-similaridade SEMANTICA e, dentro de cada grupo, lista as palavras mais
-frequentes que AINDA NAO estao em palavras_proibidas.txt.
+similaridade semantica e, dentro de cada grupo, lista as palavras mais
+frequentes que ainda estao em palavras_proibidas.txt.
 
-Por que isso e util: cada cluster tende a reunir mensagens com o mesmo "tipo"
-de ofensa (ex: um cluster de xingamentos com uma palavra, outro de ameacas de
-violencia, outro de insultos sobre aparencia). As palavras mais frequentes de
-um cluster que ainda nao estao cadastradas sao candidatas fortes a gírias ou
-variacoes novas para adicionar na lista - sem precisar ler mensagem por
-mensagem manualmente.
-
-Importante: isto sugere CANDIDATOS. A decisao de adicionar um termo à lista
-continua sendo humana - o script nao edita palavras_proibidas.txt sozinho.
+isto sugere candidatos, o script nao edita palavras_proibidas.txt sozinho.
 """
 
 from __future__ import annotations
