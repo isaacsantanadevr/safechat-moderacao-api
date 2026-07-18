@@ -1,3 +1,6 @@
+# Interface de demonstração manual do CensuraBot, separada da API real
+# (api.py). Serve pra testar/mostrar o resultado das camadas de moderação
+# sem precisar montar uma requisição HTTP - roda com `streamlit run app.py`.
 import streamlit as st
 
 from moderador import censurar_mensagem

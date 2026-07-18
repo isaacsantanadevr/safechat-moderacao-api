@@ -1,3 +1,6 @@
+# API HTTP consumida pelo SafeChat. Só expõe os endpoints e delega a
+# lógica de censura pro moderador.py - aqui não tem regra de moderação,
+# só contrato de entrada/saída.
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
@@ -11,13 +14,15 @@ app = FastAPI(
 
 
 class ModerationRequest(BaseModel):
+    # min/max_length evita chamada vazia e mensagem gigante travando
+    # as camadas de comparação (Jaccard/TF-IDF) lá no moderador.
     content: str = Field(min_length=1, max_length=500)
 
 
 class ModerationResponse(BaseModel):
     original_content: str
     content: str
-    moderated: bool
+    moderated: bool # True se o texto voltou diferente do original (algo foi censurado)
 
 
 @app.get("/health")

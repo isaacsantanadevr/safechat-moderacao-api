@@ -1,20 +1,10 @@
 """
 Avaliacao formal do classificador semantico (k-NN sobre TF-IDF).
 
-Cuidado importante (vazamento de dados): o vetorizador TF-IDF e ajustado
-(fit) SO no conjunto de treino. Se ajustassemos no dataset inteiro (como o
-cache de producao faz, por design - la nao ha essa preocupacao, e uma
-API rodando de verdade) e so depois separassemos treino/teste, o
-vocabulario already teria "visto" as mensagens de teste, e a nota ficaria
-artificialmente otimista. Aqui isso e evitado de proposito.
 
 Gera:
   - Um relatorio no terminal (precisao, revocacao, f1 por categoria).
-  - Uma imagem com a matriz de confusao (matriz_confusao.png), pronta
-    pra apresentacao.
-
-Como rodar:
-    python avaliar_classificador.py
+  - Uma imagem com a matriz de confusao (matriz_confusao.png),
 """
 
 from __future__ import annotations
